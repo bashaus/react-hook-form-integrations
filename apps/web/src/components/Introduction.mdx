@@ -1,0 +1,50 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Introduction" />
+
+# Examples of react-hook-form
+
+Examples of how to implement [react-hook-form](https://react-hook-form.com/)
+with different design systems (e.g.: [Material UI](https://mui.com/material-ui/getting-started/))
+and resolvers (e.g.: [zod](https://zod.dev/)).
+
+## Contributing
+
+View code and contribute via the [GitHub repository](https://github.com/bashaus/react-hook-form-examples).
+
+## Packages
+
+- [react-hook-form](https://react-hook-form.com/get-started)
+- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers) - allows you to use any external validation library such as Zod, Yup, Joi, etc.
+- [@hookform/error-message](https://www.npmjs.com/package/@hookform/error-message) - a simple component to render associated input's error message.
+
+### Design systems
+
+- [@mui/material](https://mui.com/material-ui/getting-started/installation/)
+- [react-dropzone](https://react-dropzone.js.org/)
+
+### Resolvers
+
+This storybook example uniquely uses [Zod](https://zod.dev/) for resolving
+forms. As most of the resolvers are interchangeable and because Zod is
+TypeScript native, it is the preferred resolver in this repository.
+
+## Best practices
+
+Some guidelines to help implement react-hook-form with various third parties.
+
+### Set defaultValues in useForm
+
+Including default values in your `useForm` declaration can help resolve missing or undefined properties.
+
+```typescript
+const form = useForm<FormSchema>({
+  /* 👇 Suggested default values */
+  defaultValues: {
+    stringField: '',
+    enumField: null,
+    arrayField: [],
+  }
+  resolver: zodResolver(formSchema),
+});
+```
