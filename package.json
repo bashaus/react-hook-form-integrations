@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "mui-zod-example",
   "private": true,
   "scripts": {
     "build": "turbo build",
