@@ -13,9 +13,17 @@ export default {
 
 export const Boolean = {
   decorators: [
-    FormDecorator({
-      defaultValues: { switchBooleanField: false },
-      resolver: zodResolver(switchBooleanFieldSchema),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { switchBooleanField: false },
+        resolver: zodResolver(switchBooleanFieldSchema),
+      },
+      {
+        githubPath: "material-ui/Switch/Boolean",
+        buttons: {
+          "MUI Switch Docs": "https://mui.com/material-ui/react-switch/",
+        },
+      },
+    ),
   ],
 };

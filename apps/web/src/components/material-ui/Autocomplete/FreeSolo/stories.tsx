@@ -14,11 +14,20 @@ export default {
 
 export const FreeSolo = {
   decorators: [
-    FormDecorator({
-      defaultValues: { autocompleteFreeSoloField: [] },
-      resolver: zodResolver(autocompleteFreeSoloFieldSchema, {
-        errorMap: arrayErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { autocompleteFreeSoloField: [] },
+        resolver: zodResolver(autocompleteFreeSoloFieldSchema, {
+          errorMap: arrayErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/Autocomplete/FreeSolo",
+        buttons: {
+          "MUI Autocomplete Docs":
+            "https://mui.com/material-ui/react-autocomplete/",
+        },
+      },
+    ),
   ],
 };

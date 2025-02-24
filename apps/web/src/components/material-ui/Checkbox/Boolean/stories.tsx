@@ -13,9 +13,17 @@ export default {
 
 export const Boolean = {
   decorators: [
-    FormDecorator({
-      defaultValues: { checkboxBooleanField: false },
-      resolver: zodResolver(checkboxBooleanFieldSchema),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { checkboxBooleanField: false },
+        resolver: zodResolver(checkboxBooleanFieldSchema),
+      },
+      {
+        githubPath: "material-ui/Checkbox/Boolean",
+        buttons: {
+          "MUI Checkbox Docs": "https://mui.com/material-ui/react-checkbox/",
+        },
+      },
+    ),
   ],
 };

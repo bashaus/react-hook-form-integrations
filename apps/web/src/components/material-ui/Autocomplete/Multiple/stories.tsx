@@ -14,11 +14,20 @@ export default {
 
 export const Multiple = {
   decorators: [
-    FormDecorator({
-      defaultValues: { autocompleteMultipleField: [] },
-      resolver: zodResolver(autocompleteMultipleFieldSchema, {
-        errorMap: arrayErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { autocompleteMultipleField: [] },
+        resolver: zodResolver(autocompleteMultipleFieldSchema, {
+          errorMap: arrayErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/Autocomplete/Multiple",
+        buttons: {
+          "MUI Autocomplete Docs":
+            "https://mui.com/material-ui/react-autocomplete/",
+        },
+      },
+    ),
   ],
 };

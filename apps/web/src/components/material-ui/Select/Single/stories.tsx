@@ -14,11 +14,19 @@ export default {
 
 export const Single = {
   decorators: [
-    FormDecorator({
-      defaultValues: { selectSingleField: "" },
-      resolver: zodResolver(selectSingleFieldSchema, {
-        errorMap: enumErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { selectSingleField: "" },
+        resolver: zodResolver(selectSingleFieldSchema, {
+          errorMap: enumErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/Select/Single",
+        buttons: {
+          "MUI Select Docs": "https://mui.com/material-ui/react-select/",
+        },
+      },
+    ),
   ],
 };

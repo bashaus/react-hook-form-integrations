@@ -14,11 +14,20 @@ export default {
 
 export const Single = {
   decorators: [
-    FormDecorator({
-      defaultValues: { toggleButtonField: null },
-      resolver: zodResolver(toggleButtonFieldSchema, {
-        errorMap: enumErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { toggleButtonField: null },
+        resolver: zodResolver(toggleButtonFieldSchema, {
+          errorMap: enumErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/ToggleButton/Single",
+        buttons: {
+          "MUI Toggle Button Docs":
+            "https://mui.com/material-ui/react-toggle-button/",
+        },
+      },
+    ),
   ],
 };

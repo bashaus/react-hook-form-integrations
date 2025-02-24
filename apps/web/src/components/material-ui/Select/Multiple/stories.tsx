@@ -14,11 +14,19 @@ export default {
 
 export const Multiple = {
   decorators: [
-    FormDecorator({
-      defaultValues: { selectMultipleField: [] },
-      resolver: zodResolver(selectMultipleFieldSchema, {
-        errorMap: arrayErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { selectMultipleField: [] },
+        resolver: zodResolver(selectMultipleFieldSchema, {
+          errorMap: arrayErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/Select/Multiple",
+        buttons: {
+          "MUI Select Docs": "https://mui.com/material-ui/react-select/",
+        },
+      },
+    ),
   ],
 };

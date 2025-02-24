@@ -14,11 +14,20 @@ export default {
 
 export const Single = {
   decorators: [
-    FormDecorator({
-      defaultValues: { radioGroupField: null },
-      resolver: zodResolver(radioGroupFieldSchema, {
-        errorMap: enumErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { radioGroupField: null },
+        resolver: zodResolver(radioGroupFieldSchema, {
+          errorMap: enumErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/RadioGroup/Single",
+        buttons: {
+          "MUI Radio Group Docs":
+            "https://mui.com/material-ui/react-radio-button/",
+        },
+      },
+    ),
   ],
 };

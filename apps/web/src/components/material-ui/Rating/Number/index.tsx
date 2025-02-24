@@ -5,14 +5,14 @@ import FormLabel from "@mui/material/FormLabel";
 import Rating from "@mui/material/Rating";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { RatingFieldSchema } from "./form";
+import { RatingNumberFieldSchema } from "./form";
 
-export default function RatingField() {
-  const { control } = useFormContext<RatingFieldSchema>();
+export default function RatingNumberField() {
+  const { control } = useFormContext<RatingNumberFieldSchema>();
 
   return (
     <Controller
-      name="ratingField"
+      name="ratingNumberField"
       control={control}
       render={({ field, fieldState }) => (
         <FormControl error={!!fieldState.error} fullWidth>

@@ -14,11 +14,19 @@ export default {
 
 export const Required = {
   decorators: [
-    FormDecorator({
-      defaultValues: { checkboxRequiredField: false },
-      resolver: zodResolver(checkboxRequiredFieldSchema, {
-        errorMap: requiredErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { checkboxRequiredField: false },
+        resolver: zodResolver(checkboxRequiredFieldSchema, {
+          errorMap: requiredErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/Checkbox/Required",
+        buttons: {
+          "MUI Checkbox Docs": "https://mui.com/material-ui/react-checkbox/",
+        },
+      },
+    ),
   ],
 };

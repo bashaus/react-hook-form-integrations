@@ -14,11 +14,20 @@ export default {
 
 export const Single = {
   decorators: [
-    FormDecorator({
-      defaultValues: { autocompleteSingleField: null },
-      resolver: zodResolver(autocompleteSingleFieldSchema, {
-        errorMap: enumErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { autocompleteSingleField: null },
+        resolver: zodResolver(autocompleteSingleFieldSchema, {
+          errorMap: enumErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/Autocomplete/Single",
+        buttons: {
+          "MUI Autocomplete Docs":
+            "https://mui.com/material-ui/react-autocomplete/",
+        },
+      },
+    ),
   ],
 };

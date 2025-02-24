@@ -14,11 +14,19 @@ export default {
 
 export const Required = {
   decorators: [
-    FormDecorator({
-      defaultValues: { switchRequiredField: false },
-      resolver: zodResolver(switchRequiredFieldSchema, {
-        errorMap: requiredErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { switchRequiredField: false },
+        resolver: zodResolver(switchRequiredFieldSchema, {
+          errorMap: requiredErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/Switch/Required",
+        buttons: {
+          "MUI Switch Docs": "https://mui.com/material-ui/react-switch/",
+        },
+      },
+    ),
   ],
 };

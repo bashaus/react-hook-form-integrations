@@ -15,10 +15,17 @@ import {
   UseFormProps,
 } from "react-hook-form";
 
+export type FormDecoratorOptions = {
+  githubPath: string;
+  buttons?: { [title: string]: string };
+};
+
 export default function FormDecorator<Schema extends FieldValues>(
   props: UseFormProps<Schema>,
+  options: FormDecoratorOptions,
 ) {
   return function FormDecoratorImpl(Story: ComponentType) {
+    const { githubPath, buttons = [] } = options;
     const form = useForm<Schema>(props);
 
     const values = form.watch();
@@ -39,9 +46,34 @@ export default function FormDecorator<Schema extends FieldValues>(
               <Story />
             </Box>
 
-            <Box p={2}>
+            <Stack direction="row" p={2} spacing={2}>
               <Button type="submit">Submit</Button>
-            </Box>
+
+              <Divider orientation="vertical" flexItem />
+
+              {githubPath && (
+                <Button
+                  href={`https://github.com/bashaus/react-hook-form-examples/tree/main/apps/web/src/components/${githubPath}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="small"
+                >
+                  View on GitHub
+                </Button>
+              )}
+
+              {Object.entries(buttons).map(([title, url]) => (
+                <Button
+                  href={url}
+                  key={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  size="small"
+                >
+                  {title}
+                </Button>
+              ))}
+            </Stack>
 
             {isSubmitted && (
               <>

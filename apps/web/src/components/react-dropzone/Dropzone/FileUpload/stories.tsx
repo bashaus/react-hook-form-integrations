@@ -14,11 +14,19 @@ export default {
 
 export const FileUpload = {
   decorators: [
-    FormDecorator({
-      defaultValues: { dropzoneFileUploadField: [] },
-      resolver: zodResolver(dropzoneFileUploadFieldSchema, {
-        errorMap: arrayErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { dropzoneFileUploadField: [] },
+        resolver: zodResolver(dropzoneFileUploadFieldSchema, {
+          errorMap: arrayErrorMap,
+        }),
+      },
+      {
+        githubPath: "react-dropzone/Dropzone/FileUpload",
+        buttons: {
+          "Dropzone Docs": "https://react-dropzone.js.org/",
+        },
+      },
+    ),
   ],
 };

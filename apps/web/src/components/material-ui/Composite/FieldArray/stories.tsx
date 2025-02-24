@@ -9,16 +9,21 @@ import { compositeFieldArrayFieldSchema } from "./form";
 
 export default {
   component: CompositeFieldArrayField,
-  title: "Material UI/Composites/Field Array",
+  title: "Material UI/Composite/Field Array",
 } as Meta<typeof CompositeFieldArrayField>;
 
 export const FieldArray = {
   decorators: [
-    FormDecorator({
-      defaultValues: { compositeFieldArrayField: [] },
-      resolver: zodResolver(compositeFieldArrayFieldSchema, {
-        errorMap: arrayErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { compositeFieldArrayField: [] },
+        resolver: zodResolver(compositeFieldArrayFieldSchema, {
+          errorMap: arrayErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/Composite/FieldArray",
+      },
+    ),
   ],
 };

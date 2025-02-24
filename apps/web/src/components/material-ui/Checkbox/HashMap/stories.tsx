@@ -14,13 +14,21 @@ export default {
 
 export const HashMap = {
   decorators: [
-    FormDecorator({
-      defaultValues: {
-        checkboxHashMapField: Object.fromEntries(
-          Object.values(Season).map((season) => [season, false]),
-        ),
+    FormDecorator(
+      {
+        defaultValues: {
+          checkboxHashMapField: Object.fromEntries(
+            Object.values(Season).map((season) => [season, false]),
+          ),
+        },
+        resolver: zodResolver(checkboxHashMapFieldSchema),
       },
-      resolver: zodResolver(checkboxHashMapFieldSchema),
-    }),
+      {
+        githubPath: "material-ui/Checkbox/HashMap",
+        buttons: {
+          "MUI Checkbox Docs": "https://mui.com/material-ui/react-checkbox/",
+        },
+      },
+    ),
   ],
 };

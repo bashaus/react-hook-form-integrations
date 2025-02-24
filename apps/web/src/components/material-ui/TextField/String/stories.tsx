@@ -4,21 +4,30 @@ import type { Meta } from "@storybook/react";
 import FormDecorator from "@/decorators/FormDecorator";
 import { stringErrorMap } from "@/resolvers/zod/error-map/string";
 
-import TextField from ".";
-import { textInputFieldSchema } from "./form";
+import TextFieldStringField from ".";
+import { textFieldStringFieldSchema } from "./form";
 
 export default {
-  component: TextField,
-  title: "Material UI/Text/String",
-} as Meta<typeof TextField>;
+  component: TextFieldStringField,
+  title: "Material UI/TextField/String",
+} as Meta<typeof TextFieldStringField>;
 
 export const String = {
   decorators: [
-    FormDecorator({
-      defaultValues: { textInputField: "" },
-      resolver: zodResolver(textInputFieldSchema, {
-        errorMap: stringErrorMap,
-      }),
-    }),
+    FormDecorator(
+      {
+        defaultValues: { textFieldStringField: "" },
+        resolver: zodResolver(textFieldStringFieldSchema, {
+          errorMap: stringErrorMap,
+        }),
+      },
+      {
+        githubPath: "material-ui/TexField/String",
+        buttons: {
+          "MUI Text Field Docs":
+            "https://mui.com/material-ui/react-text-field/",
+        },
+      },
+    ),
   ],
 };

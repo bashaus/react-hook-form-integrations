@@ -2,14 +2,14 @@ import { ErrorMessage } from "@hookform/error-message";
 import TextField from "@mui/material/TextField";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { TextInputFieldSchema } from "./form";
+import { TextFieldStringFieldSchema } from "./form";
 
-export default function TextInputField() {
-  const { control } = useFormContext<TextInputFieldSchema>();
+export default function TextFieldStringField() {
+  const { control } = useFormContext<TextFieldStringFieldSchema>();
 
   return (
     <Controller
-      name="textInputField"
+      name="textFieldStringField"
       control={control}
       render={({ field, fieldState }) => (
         <TextField
@@ -17,7 +17,7 @@ export default function TextInputField() {
           fullWidth
           label="Text field"
           error={!!fieldState.error}
-          helperText={<ErrorMessage name="textInputField" />}
+          helperText={<ErrorMessage name="textFieldStringField" />}
         />
       )}
     />
