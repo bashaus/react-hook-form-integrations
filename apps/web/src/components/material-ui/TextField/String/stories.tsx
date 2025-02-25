@@ -9,7 +9,7 @@ import { textFieldStringFieldSchema } from "./form";
 
 export default {
   component: TextFieldStringField,
-  title: "Material UI/TextField/String",
+  title: "Material UI/Text Field/String",
 } as Meta<typeof TextFieldStringField>;
 
 export const String = {
