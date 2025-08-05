@@ -1,4 +1,3 @@
-import { DevTool } from "@hookform/devtools";
 import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -14,6 +13,7 @@ import {
   useForm,
   UseFormProps,
 } from "react-hook-form";
+import ReactJson from "react-json-view";
 
 export type FormDecoratorOptions = {
   githubPath: string;
@@ -26,17 +26,17 @@ export default function FormDecorator<Schema extends FieldValues>(
 ) {
   return function FormDecoratorImpl(Story: ComponentType) {
     const { githubPath, buttons = [] } = options;
-    const form = useForm<Schema>(props);
 
-    const values = form.watch();
-    const { errors, isSubmitted, isValid } = form.formState;
+    const form = useForm<Schema>(props);
+    const { formState, handleSubmit, watch } = form;
+    const { errors, isSubmitted, isValid } = formState;
+
+    const values = watch();
 
     return (
       <FormProvider {...form}>
         <Card>
-          <DevTool control={form.control} placement="top-right" />
-
-          <Stack component="form" onSubmit={form.handleSubmit(() => {})}>
+          <Stack component="form" onSubmit={handleSubmit(() => {})}>
             <Box
               sx={(theme) => ({
                 backgroundColor: theme.palette.grey[200],
@@ -93,14 +93,14 @@ export default function FormDecorator<Schema extends FieldValues>(
 
                 <CardHeader title="Form values" />
                 <CardContent>
-                  <pre>{JSON.stringify(values, null, 2)}</pre>
+                  <ReactJson src={values} name="values" />
                 </CardContent>
 
                 <Divider />
 
                 <CardHeader title="Form errors" />
                 <CardContent>
-                  <pre>{JSON.stringify(errors, null, 2)}</pre>
+                  <ReactJson src={errors} name="errors" />
                 </CardContent>
               </>
             )}

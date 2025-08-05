@@ -15,15 +15,15 @@
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@hookform/devtools": "^4.3.3",
     "@hookform/error-message": "^2.0.1",
-    "@hookform/resolvers": "^3.10.0",
+    "@hookform/resolvers": "^5.2.1",
     "@mui/icons-material": "^7.3.0",
     "@mui/material": "^7.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-dropzone": "^14.3.8",
-    "react-hook-form": "^7.54.2",
+    "react-hook-form": "^7.62.0",
+    "react-json-view": "^1.21.3",
     "zod": "^4.0.14"
   },
   "devDependencies": {
@@ -38,6 +38,6 @@
     "eslint-plugin-storybook": "9.1.1",
     "storybook": "^9.1.1",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
-    "typescript": "5.7.3"
+    "typescript": "5.9.2"
   }
 }
