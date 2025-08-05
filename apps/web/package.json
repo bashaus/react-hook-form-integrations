@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "build": "storybook build",
+    "build-storybook": "storybook build",
     "check-types": "tsc --noEmit",
     "dev": "storybook dev -p 6006",
     "lint": "eslint .",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -29,15 +29,15 @@
   "devDependencies": {
     "@repo/eslint-config": "*",
     "@repo/typescript-config": "*",
+    "@storybook/addon-docs": "^9.1.1",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",
     "@storybook/react-webpack5": "^9.1.1",
     "@types/node": "^22",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
+    "eslint-plugin-storybook": "9.1.1",
     "storybook": "^9.1.1",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
-    "typescript": "5.7.3",
-    "eslint-plugin-storybook": "9.1.1",
-    "@storybook/addon-docs": "^9.1.1"
+    "typescript": "5.7.3"
   }
 }

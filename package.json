@@ -1,6 +1,10 @@
 {
   "name": "react-hook-form-integrations",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo build",
     "check-types": "turbo run check-types",
@@ -14,12 +18,8 @@
     "turbo": "^2.5.5",
     "typescript": "5.7.3"
   },
+  "packageManager": "npm@10.8.3",
   "engines": {
     "node": ">=18"
-  },
-  "packageManager": "npm@10.8.3",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  }
 }
