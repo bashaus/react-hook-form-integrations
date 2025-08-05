@@ -19,7 +19,7 @@ export const String = {
         resolver: zodResolver(textFieldStringFieldSchema),
       },
       {
-        githubPath: "material-ui/TexField/String",
+        githubPath: "material-ui/TextField/String",
         buttons: {
           "MUI Text Field Docs":
             "https://mui.com/material-ui/react-text-field/",
