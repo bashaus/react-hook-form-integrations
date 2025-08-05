@@ -15,7 +15,6 @@ export const Required = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { switchRequiredField: false },
         resolver: zodResolver(switchRequiredFieldSchema),
       },
       {

@@ -15,7 +15,6 @@ export const Single = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { radioGroupField: null },
         resolver: zodResolver(radioGroupFieldSchema),
       },
       {

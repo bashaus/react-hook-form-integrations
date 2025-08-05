@@ -15,7 +15,6 @@ export const Required = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { checkboxRequiredField: false },
         resolver: zodResolver(checkboxRequiredFieldSchema),
       },
       {

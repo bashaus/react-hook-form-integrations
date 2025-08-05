@@ -78,16 +78,18 @@ export default function FormDecorator<Schema extends FieldValues>(
             {isSubmitted && (
               <>
                 <Divider />
+                {isValid && (
+                  <Alert severity="success">
+                    The user input contains valid values.
+                  </Alert>
+                )}
 
-                <Alert severity={isValid ? "success" : "error"}>
-                  {isValid && <>The user input contains valid values.</>}
-                  {!isValid && (
-                    <>
-                      The user input <strong>does not</strong> contain valid
-                      values.
-                    </>
-                  )}
-                </Alert>
+                {!isValid && (
+                  <Alert severity="error">
+                    The user input <strong>does not</strong> contain valid
+                    values.
+                  </Alert>
+                )}
 
                 <Divider />
 

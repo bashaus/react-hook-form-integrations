@@ -15,7 +15,6 @@ export const Single = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { autocompleteSingleField: null },
         resolver: zodResolver(autocompleteSingleFieldSchema),
       },
       {
