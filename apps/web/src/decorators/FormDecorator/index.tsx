@@ -53,7 +53,7 @@ export default function FormDecorator<Schema extends FieldValues>(
 
               {githubPath && (
                 <Button
-                  href={`https://github.com/bashaus/react-hook-form-examples/tree/main/apps/web/src/components/${githubPath}`}
+                  href={`https://github.com/bashaus/react-hook-form-integrations/tree/main/apps/web/src/components/${githubPath}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   size="small"

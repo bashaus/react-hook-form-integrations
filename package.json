@@ -1,5 +1,5 @@
 {
-  "name": "react-hook-form-examples",
+  "name": "react-hook-form-integrations",
   "private": true,
   "scripts": {
     "build": "turbo build",
