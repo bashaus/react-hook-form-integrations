@@ -1,0 +1,58 @@
+name: publish
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.15"
+
+      - name: npm
+        run: npm ci
+
+      - name: prettier
+        run: npx prettier --check .
+
+      - name: lint
+        run: npm run lint
+
+      - name: build
+        run: npm run build
+
+      - name: publish
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/storybook-static
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
