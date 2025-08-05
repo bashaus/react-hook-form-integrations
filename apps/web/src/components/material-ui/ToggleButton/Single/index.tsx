@@ -8,7 +8,7 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { ToggleButtonFieldSchema } from "./form";
+import { ToggleButtonFieldSchema } from "./schema";
 
 export default function ToggleButtonField() {
   const { control } = useFormContext<ToggleButtonFieldSchema>();

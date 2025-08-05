@@ -5,7 +5,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import Switch from "@mui/material/Switch";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { SwitchRequiredFieldSchema } from "./form";
+import { SwitchRequiredFieldSchema } from "./schema";
 
 export default function SwitchRequiredField() {
   const { control } = useFormContext<SwitchRequiredFieldSchema>();

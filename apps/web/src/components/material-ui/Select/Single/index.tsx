@@ -8,7 +8,7 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { SelectSingleFieldSchema } from "./form";
+import { SelectSingleFieldSchema } from "./schema";
 
 export default function SelectSingleField() {
   const { control } = useFormContext<SelectSingleFieldSchema>();

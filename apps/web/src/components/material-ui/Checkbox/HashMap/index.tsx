@@ -8,7 +8,7 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { CheckboxHashMapFieldSchema } from "./form";
+import { CheckboxHashMapFieldSchema } from "./schema";
 
 export default function CheckboxHashMapField() {
   const { control } = useFormContext<CheckboxHashMapFieldSchema>();

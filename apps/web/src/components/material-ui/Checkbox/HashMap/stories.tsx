@@ -5,7 +5,7 @@ import FormDecorator from "@/decorators/FormDecorator";
 import { Season } from "@/helpers/options";
 
 import CheckboxHashMapField from ".";
-import { checkboxHashMapFieldSchema } from "./form";
+import { checkboxHashMapFieldSchema } from "./schema";
 
 export default {
   component: CheckboxHashMapField,

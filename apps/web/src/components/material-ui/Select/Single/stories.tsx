@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 
 import SelectSingleField from ".";
-import { selectSingleFieldSchema } from "./form";
+import { selectSingleFieldSchema } from "./schema";
 
 export default {
   component: SelectSingleField,

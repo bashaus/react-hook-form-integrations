@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 
 import SelectMultipleField from ".";
-import { selectMultipleFieldSchema } from "./form";
+import { selectMultipleFieldSchema } from "./schema";
 
 export default {
   component: SelectMultipleField,

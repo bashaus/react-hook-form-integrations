@@ -5,7 +5,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import Switch from "@mui/material/Switch";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { SwitchBooleanFieldSchema } from "./form";
+import { SwitchBooleanFieldSchema } from "./schema";
 
 export default function SwitchBooleanField() {
   const { control } = useFormContext<SwitchBooleanFieldSchema>();

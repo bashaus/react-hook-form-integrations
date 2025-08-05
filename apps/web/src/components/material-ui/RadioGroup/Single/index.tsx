@@ -8,7 +8,7 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { RadioGroupFieldSchema } from "./form";
+import { RadioGroupFieldSchema } from "./schema";
 
 export default function RadioGroupField() {
   const { control } = useFormContext<RadioGroupFieldSchema>();

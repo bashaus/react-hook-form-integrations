@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 
 import TextFieldStringField from ".";
-import { textFieldStringFieldSchema } from "./form";
+import { textFieldStringFieldSchema } from "./schema";
 
 export default {
   component: TextFieldStringField,

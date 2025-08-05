@@ -5,7 +5,7 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { AutocompleteSingleFieldSchema } from "./form";
+import { AutocompleteSingleFieldSchema } from "./schema";
 
 export default function AutocompleteSingleField() {
   const { control } = useFormContext<AutocompleteSingleFieldSchema>();

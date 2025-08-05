@@ -8,7 +8,7 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { SelectMultipleFieldSchema } from "./form";
+import { SelectMultipleFieldSchema } from "./schema";
 
 export default function SelectMultipleField() {
   const { control } = useFormContext<SelectMultipleFieldSchema>();

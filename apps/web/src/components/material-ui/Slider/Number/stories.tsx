@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 
 import SliderNumberField from ".";
-import { sliderNumberFieldSchema } from "./form";
+import { sliderNumberFieldSchema } from "./schema";
 
 export default {
   component: SliderNumberField,

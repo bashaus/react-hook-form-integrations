@@ -6,7 +6,7 @@ import FormGroup from "@mui/material/FormGroup";
 import FormHelperText from "@mui/material/FormHelperText";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { CheckboxRequiredFieldSchema } from "./form";
+import { CheckboxRequiredFieldSchema } from "./schema";
 
 export default function CheckboxRequiredField() {
   const { control } = useFormContext<CheckboxRequiredFieldSchema>();

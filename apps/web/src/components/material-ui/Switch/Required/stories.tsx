@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 
 import SwitchRequiredField from ".";
-import { switchRequiredFieldSchema } from "./form";
+import { switchRequiredFieldSchema } from "./schema";
 
 export default {
   component: SwitchRequiredField,

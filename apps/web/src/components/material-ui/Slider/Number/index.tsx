@@ -5,7 +5,7 @@ import FormLabel from "@mui/material/FormLabel";
 import Slider from "@mui/material/Slider";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { SliderNumberFieldSchema } from "./form";
+import { SliderNumberFieldSchema } from "./schema";
 
 export default function SliderNumberField() {
   const { control } = useFormContext<SliderNumberFieldSchema>();

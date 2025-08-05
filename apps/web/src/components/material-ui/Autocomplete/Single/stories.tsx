@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 
 import AutocompleteSingleField from ".";
-import { autocompleteSingleFieldSchema } from "./form";
+import { autocompleteSingleFieldSchema } from "./schema";
 
 export default {
   component: AutocompleteSingleField,

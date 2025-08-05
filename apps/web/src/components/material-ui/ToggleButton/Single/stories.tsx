@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 
 import ToggleButtonField from ".";
-import { toggleButtonFieldSchema } from "./form";
+import { toggleButtonFieldSchema } from "./schema";
 
 export default {
   component: ToggleButtonField,

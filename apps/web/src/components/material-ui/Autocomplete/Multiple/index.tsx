@@ -5,7 +5,7 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { AutocompleteMultipleFieldSchema } from "./form";
+import { AutocompleteMultipleFieldSchema } from "./schema";
 
 export default function AutocompleteMultipleField() {
   const { control } = useFormContext<AutocompleteMultipleFieldSchema>();

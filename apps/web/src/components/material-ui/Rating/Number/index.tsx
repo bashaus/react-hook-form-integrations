@@ -5,7 +5,7 @@ import FormLabel from "@mui/material/FormLabel";
 import Rating from "@mui/material/Rating";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { RatingNumberFieldSchema } from "./form";
+import { RatingNumberFieldSchema } from "./schema";
 
 export default function RatingNumberField() {
   const { control } = useFormContext<RatingNumberFieldSchema>();

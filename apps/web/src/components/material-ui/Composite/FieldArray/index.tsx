@@ -20,7 +20,7 @@ import TextField from "@mui/material/TextField";
 import Tooltip from "@mui/material/Tooltip";
 import { Controller, useFieldArray, useFormContext } from "react-hook-form";
 
-import { CompositeFieldArrayFieldSchema } from "./form";
+import { CompositeFieldArrayFieldSchema } from "./schema";
 
 export default function CompositeFieldArrayField() {
   const { control } = useFormContext<CompositeFieldArrayFieldSchema>();

@@ -5,7 +5,7 @@ import FormLabel from "@mui/material/FormLabel";
 import Slider from "@mui/material/Slider";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { SliderRangeFieldSchema } from "./form";
+import { SliderRangeFieldSchema } from "./schema";
 
 export default function SliderRangeField() {
   const { control } = useFormContext<SliderRangeFieldSchema>();

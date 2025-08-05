@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 
 import RatingNumberField from ".";
-import { ratingNumberFieldSchema } from "./form";
+import { ratingNumberFieldSchema } from "./schema";
 
 export default {
   component: RatingNumberField,
