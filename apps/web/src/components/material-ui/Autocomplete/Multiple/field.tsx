@@ -25,7 +25,7 @@ export default function AutocompleteMultipleField() {
             <TextField
               {...params}
               label="Seasons"
-              error={!!fieldState.error}
+              error={fieldState.invalid}
               helperText={<ErrorMessage name={field.name} />}
             />
           )}

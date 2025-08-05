@@ -24,7 +24,7 @@ export default function AutocompleteSingleField() {
             <TextField
               {...params}
               label="Season"
-              error={!!fieldState.error}
+              error={fieldState.invalid}
               helperText={<ErrorMessage name={field.name} />}
             />
           )}

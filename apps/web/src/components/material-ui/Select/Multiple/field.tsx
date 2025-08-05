@@ -18,7 +18,7 @@ export default function SelectMultipleField() {
       name="selectMultipleField"
       control={control}
       render={({ field: { value = [], ...field }, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <InputLabel>Seasons</InputLabel>
           <Select {...field} value={value} multiple label="Seasons">
             {seasons.map((season) => (

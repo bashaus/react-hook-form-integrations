@@ -35,7 +35,7 @@ export default function CompositeFieldArrayField() {
       control={control}
       name="compositeFieldArrayField"
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <Stack spacing={2}>
             <Box>
               <Button
@@ -79,7 +79,7 @@ export default function CompositeFieldArrayField() {
                             <TableCell>
                               <TextField
                                 {...field}
-                                error={!!fieldState.error}
+                                error={fieldState.invalid}
                                 helperText={<ErrorMessage name={field.name} />}
                                 fullWidth
                               />

@@ -18,7 +18,7 @@ export default function CheckboxHashMapField() {
       name="checkboxHashMapField"
       control={control}
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <FormGroup>
             {seasons.map((season) => (
               <Controller
@@ -26,7 +26,7 @@ export default function CheckboxHashMapField() {
                 control={control}
                 key={season}
                 render={({ field }) => (
-                  <FormControl error={!!fieldState.error} fullWidth>
+                  <FormControl error={fieldState.invalid} fullWidth>
                     <FormControlLabel
                       key={season}
                       label={season}

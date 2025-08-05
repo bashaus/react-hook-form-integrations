@@ -18,7 +18,7 @@ export default function SelectSingleField() {
       name="selectSingleField"
       control={control}
       render={({ field: { value = "", ...field }, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <InputLabel>Season</InputLabel>
           <Select {...field} value={value} label="Season">
             {seasons.map((season) => (

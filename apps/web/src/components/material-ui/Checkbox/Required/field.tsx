@@ -16,7 +16,7 @@ export default function CheckboxRequiredField() {
       name="checkboxRequiredField"
       control={control}
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <FormGroup>
             <FormControlLabel
               label="checkboxRequiredField"

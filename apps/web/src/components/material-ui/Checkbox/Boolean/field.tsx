@@ -16,7 +16,7 @@ export default function CheckboxBooleanField() {
       name="checkboxBooleanField"
       control={control}
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <FormGroup>
             <FormControlLabel
               label="Subscribe to newsletter"

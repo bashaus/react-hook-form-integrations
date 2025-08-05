@@ -15,7 +15,7 @@ export default function SliderNumberField() {
       name="sliderNumberField"
       control={control}
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <FormLabel>Slider</FormLabel>
           <Slider {...field} min={0} max={100} />
           <ErrorMessage name={field.name} as={FormHelperText} />

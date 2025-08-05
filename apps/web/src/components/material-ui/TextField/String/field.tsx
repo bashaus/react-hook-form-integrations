@@ -16,7 +16,7 @@ export default function TextFieldStringField() {
           {...field}
           fullWidth
           label="Text field"
-          error={!!fieldState.error}
+          error={fieldState.invalid}
           helperText={<ErrorMessage name={field.name} />}
         />
       )}

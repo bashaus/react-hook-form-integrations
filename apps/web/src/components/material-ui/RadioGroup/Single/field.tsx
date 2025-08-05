@@ -18,7 +18,7 @@ export default function RadioGroupField() {
       name="radioGroupField"
       control={control}
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <RadioGroup>
             {seasons.map((season) => (
               <FormControlLabel

@@ -15,7 +15,7 @@ export default function SwitchBooleanField() {
       name="switchBooleanField"
       control={control}
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <FormControlLabel
             label="Subscribe to newsletter"
             control={<Switch {...field} />}

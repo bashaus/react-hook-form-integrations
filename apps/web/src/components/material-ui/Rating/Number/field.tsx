@@ -15,7 +15,7 @@ export default function RatingNumberField() {
       name="ratingNumberField"
       control={control}
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <FormLabel>Rating</FormLabel>
           <Rating {...field} />
           <ErrorMessage name={field.name} as={FormHelperText} />

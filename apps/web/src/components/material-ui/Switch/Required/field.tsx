@@ -15,7 +15,7 @@ export default function SwitchRequiredField() {
       name="switchRequiredField"
       control={control}
       render={({ field, fieldState }) => (
-        <FormControl error={!!fieldState.error} fullWidth>
+        <FormControl error={fieldState.invalid} fullWidth>
           <FormControlLabel
             label="Agree to terms and conditions"
             control={<Switch {...field} />}
