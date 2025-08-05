@@ -1,4 +1,6 @@
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
@@ -11,6 +13,7 @@ import {
   useForm,
   UseFormProps,
 } from "react-hook-form";
+import { action } from "storybook/actions";
 
 export type FormDecoratorOptions = {
   githubPath: string;
@@ -34,54 +37,50 @@ export default function FormDecorator<Schema extends FieldValues>(
       emitFormUpdate(isSubmitted ? values : null, isSubmitted ? errors : null);
     }, [values, errors, isSubmitted]);
 
+    const onSubmit = handleSubmit(action("onValid"), action("onInvalid"));
+
     return (
       <FormProvider {...form}>
-        <Card>
-          <Stack component="form" onSubmit={handleSubmit(() => {})}>
-            <Box
-              bgcolor="grey.200"
-              sx={(theme) => ({
-                backgroundColor: theme.palette.grey[200],
-                padding: 2,
-              })}
+        <Card component="form" onSubmit={onSubmit}>
+          <Box p={2}>
+            <Story />
+          </Box>
+
+          <Stack direction="row" p={2} spacing={2} bgcolor="grey.100">
+            <Button
+              type="submit"
+              variant="contained"
+              loading={isSubmitting}
+              loadingPosition="start"
+              startIcon={<ChevronRightIcon />}
             >
-              <Story />
-            </Box>
+              Submit
+            </Button>
 
-            <Stack direction="row" p={2} spacing={2}>
+            {githubPath && (
               <Button
-                type="submit"
-                variant="contained"
-                loading={isSubmitting}
-                loadingPosition="start"
-                startIcon={<ChevronRightIcon />}
+                href={`https://github.com/bashaus/react-hook-form-integrations/tree/main/apps/web/src/components/${githubPath}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="small"
+                startIcon={<GitHubIcon />}
               >
-                Submit
+                View on GitHub
               </Button>
+            )}
 
-              {githubPath && (
-                <Button
-                  href={`https://github.com/bashaus/react-hook-form-integrations/tree/main/apps/web/src/components/${githubPath}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  size="small"
-                >
-                  View on GitHub
-                </Button>
-              )}
-
-              {Object.entries(buttons).map(([title, url]) => (
-                <Button
-                  href={url}
-                  key={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  size="small"
-                >
-                  {title}
-                </Button>
-              ))}
-            </Stack>
+            {Object.entries(buttons).map(([title, url]) => (
+              <Button
+                href={url}
+                key={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                size="small"
+                startIcon={<OpenInNewIcon />}
+              >
+                {title}
+              </Button>
+            ))}
           </Stack>
         </Card>
       </FormProvider>
