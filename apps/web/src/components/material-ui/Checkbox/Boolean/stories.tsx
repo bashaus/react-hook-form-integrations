@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import CheckboxBooleanField from ".";
+import CheckboxBooleanField from "./field";
 import { checkboxBooleanFieldSchema } from "./schema";
 
 export default {

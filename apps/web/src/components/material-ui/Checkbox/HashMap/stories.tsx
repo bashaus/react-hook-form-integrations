@@ -4,7 +4,7 @@ import type { Meta } from "@storybook/react-webpack5";
 import FormDecorator from "@/decorators/FormDecorator";
 import { Season } from "@/helpers/options";
 
-import CheckboxHashMapField from ".";
+import CheckboxHashMapField from "./field";
 import { checkboxHashMapFieldSchema } from "./schema";
 
 export default {

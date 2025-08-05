@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import AutocompleteFreeSoloField from ".";
+import AutocompleteFreeSoloField from "./field";
 import { autocompleteFreeSoloFieldSchema } from "./schema";
 
 export default {

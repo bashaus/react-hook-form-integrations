@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import SliderRangeField from ".";
+import SliderRangeField from "./field";
 import { sliderRangeFieldSchema } from "./schema";
 
 export default {

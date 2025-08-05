@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import CheckboxRequiredField from ".";
+import CheckboxRequiredField from "./field";
 import { checkboxRequiredFieldSchema } from "./schema";
 
 export default {

@@ -3,8 +3,8 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import DropzoneFileUploadField from ".";
-import { dropzoneFileUploadFieldSchema } from "./form";
+import DropzoneFileUploadField from "./field";
+import { dropzoneFileUploadFieldSchema } from "./schema";
 
 export default {
   component: DropzoneFileUploadField,

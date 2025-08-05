@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import AutocompleteMultipleField from ".";
+import AutocompleteMultipleField from "./field";
 import { autocompleteMultipleFieldSchema } from "./schema";
 
 export default {

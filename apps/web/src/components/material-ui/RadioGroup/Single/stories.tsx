@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import RadioGroupField from ".";
+import RadioGroupField from "./field";
 import { radioGroupFieldSchema } from "./schema";
 
 export default {

@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import SelectSingleField from ".";
+import SelectSingleField from "./field";
 import { selectSingleFieldSchema } from "./schema";
 
 export default {

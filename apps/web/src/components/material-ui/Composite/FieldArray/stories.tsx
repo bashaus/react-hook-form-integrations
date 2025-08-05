@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import CompositeFieldArrayField from ".";
+import CompositeFieldArrayField from "./field";
 import { compositeFieldArrayFieldSchema } from "./schema";
 
 export default {

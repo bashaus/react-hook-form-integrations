@@ -2,7 +2,7 @@ import { ErrorMessage } from "@hookform/error-message";
 import Dropzone from "react-dropzone";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { DropzoneFileUploadFieldFieldSchema } from "./form";
+import { DropzoneFileUploadFieldFieldSchema } from "./schema";
 
 export default function DropzoneFileUploadField() {
   const { control } = useFormContext<DropzoneFileUploadFieldFieldSchema>();

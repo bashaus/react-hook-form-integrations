@@ -3,7 +3,7 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
-import RatingNumberField from ".";
+import RatingNumberField from "./field";
 import { ratingNumberFieldSchema } from "./schema";
 
 export default {
