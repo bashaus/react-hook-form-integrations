@@ -6,7 +6,7 @@ import { coerceUndefinedToArray } from "@/resolvers/zod/coerce";
 export const autocompleteMultipleFieldSchema = z.object({
   autocompleteMultipleField: z.preprocess(
     coerceUndefinedToArray,
-    z.array(z.nativeEnum(Season)).min(1),
+    z.array(z.enum(Season)).min(1),
   ),
 });
 
