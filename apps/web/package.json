@@ -23,11 +23,11 @@
     "react-dom": "^19.0.0",
     "react-dropzone": "^14.3.8",
     "react-hook-form": "^7.62.0",
-    "react-json-view": "^1.21.3",
     "zod": "^4.0.14"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
+    "@repo/storybook-hookform": "*",
     "@repo/typescript-config": "*",
     "@storybook/addon-docs": "^9.1.1",
     "@storybook/addon-webpack5-compiler-swc": "^3.0.0",

@@ -1,19 +1,16 @@
-import Alert from "@mui/material/Alert";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardHeader from "@mui/material/CardHeader";
-import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
-import { ComponentType } from "react";
+import { emitFormUpdate } from "@repo/storybook-hookform/preview";
+import { ComponentType, useEffect } from "react";
 import {
   FieldValues,
   FormProvider,
   useForm,
   UseFormProps,
 } from "react-hook-form";
-import ReactJson from "react-json-view";
 
 export type FormDecoratorOptions = {
   githubPath: string;
@@ -29,15 +26,20 @@ export default function FormDecorator<Schema extends FieldValues>(
 
     const form = useForm<Schema>(props);
     const { formState, handleSubmit, watch } = form;
-    const { errors, isSubmitted, isValid } = formState;
 
+    const { isSubmitted, isSubmitting, errors } = formState;
     const values = watch();
+
+    useEffect(() => {
+      emitFormUpdate(isSubmitted ? values : null, isSubmitted ? errors : null);
+    }, [values, errors, isSubmitted]);
 
     return (
       <FormProvider {...form}>
         <Card>
           <Stack component="form" onSubmit={handleSubmit(() => {})}>
             <Box
+              bgcolor="grey.200"
               sx={(theme) => ({
                 backgroundColor: theme.palette.grey[200],
                 padding: 2,
@@ -47,11 +49,15 @@ export default function FormDecorator<Schema extends FieldValues>(
             </Box>
 
             <Stack direction="row" p={2} spacing={2}>
-              <Button type="submit" variant="contained">
+              <Button
+                type="submit"
+                variant="contained"
+                loading={isSubmitting}
+                loadingPosition="start"
+                startIcon={<ChevronRightIcon />}
+              >
                 Submit
               </Button>
-
-              <Divider orientation="vertical" flexItem />
 
               {githubPath && (
                 <Button
@@ -76,38 +82,6 @@ export default function FormDecorator<Schema extends FieldValues>(
                 </Button>
               ))}
             </Stack>
-
-            {isSubmitted && (
-              <>
-                <Divider />
-                {isValid && (
-                  <Alert severity="success">
-                    The user input contains valid values.
-                  </Alert>
-                )}
-
-                {!isValid && (
-                  <Alert severity="error">
-                    The user input <strong>does not</strong> contain valid
-                    values.
-                  </Alert>
-                )}
-
-                <Divider />
-
-                <CardHeader title="Form values" />
-                <CardContent>
-                  <ReactJson src={values} name="values" />
-                </CardContent>
-
-                <Divider />
-
-                <CardHeader title="Form errors" />
-                <CardContent>
-                  <ReactJson src={errors} name="errors" />
-                </CardContent>
-              </>
-            )}
           </Stack>
         </Card>
       </FormProvider>

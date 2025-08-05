@@ -2,35 +2,33 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 <Meta title="Introduction" />
 
-# react-hook-form integrations
+# `react-hook-form` Integrations
 
-Examples of how to implement [react-hook-form](https://react-hook-form.com/)
-with different design systems (e.g.: [Material UI](https://mui.com/material-ui/getting-started/))
-and resolvers (e.g.: [zod](https://zod.dev/)).
+Explore practical examples of using [react-hook-form](https://react-hook-form.com/)
+with various design systems (e.g.: [Material UI](https://mui.com/material-ui/getting-started/))
+and schema resolvers such as [zod](https://zod.dev/).
+
+## How to Use
+
+In the sidebar, you'll find stories rendering components from different design
+systems and interfaces (e.g.: Material UI), showcasing how to integrate
+react-hook-form and zod with each component. Just pick a component to get started.
+
+### Viewing Code
+
+Since some implementations can be complex and require some customization, click
+the "View on GitHub" link on each story to check out the implementation details.
+
+### Story Debugging
+
+Each component story includes two helpful panels:
+
+- **Form values**: Displays the current form data in serialized form.
+- **Form errors**: Shows any validation errors captured via Zod.
+
+These panels make it easier to understand and debug how the form behaves.
 
 ## Contributing
 
-View code and contribute via the [GitHub repository](https://github.com/bashaus/react-hook-form-integrations).
-
-## Packages
-
-- [react-hook-form](https://react-hook-form.com/get-started)
-- [@hookform/resolvers](https://www.npmjs.com/package/@hookform/resolvers) - allows you to use any external validation library such as Zod, Yup, Joi, etc.
-- [@hookform/error-message](https://www.npmjs.com/package/@hookform/error-message) - a simple component to render associated input's error message.
-
-### Interface
-
-- [@mui/material](https://mui.com/material-ui/getting-started/installation/)
-- [react-dropzone](https://react-dropzone.js.org/)
-
-### Resolvers
-
-This storybook example uniquely uses [Zod](https://zod.dev/) for resolving
-forms. As most of the resolvers are interchangeable and because Zod is
-TypeScript native, it is the preferred resolver in this repository.
-
-You can always replace Zod with another resolver:
-
-- [Joi](https://www.npmjs.com/package/joi)
-- [Yup](https://www.npmjs.com/package/yup)
-- Or one of the other [20+ resolvers](https://www.npmjs.com/package/@hookform/resolvers#Links)
+Interested in contributing or exploring the code? Head over to the
+[GitHub repository](https://github.com/bashaus/react-hook-form-integrations).
