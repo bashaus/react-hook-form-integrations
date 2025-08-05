@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
@@ -9,7 +9,7 @@ import { switchBooleanFieldSchema } from "./form";
 export default {
   component: SwitchBooleanField,
   title: "Material UI/Switch/Boolean",
-} as Meta<typeof SwitchBooleanField>;
+} satisfies Meta<typeof SwitchBooleanField>;
 
 export const Boolean = {
   decorators: [

@@ -1,8 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
-import { arrayErrorMap } from "@/resolvers/zod/error-map/array";
 
 import SelectMultipleField from ".";
 import { selectMultipleFieldSchema } from "./form";
@@ -10,16 +9,14 @@ import { selectMultipleFieldSchema } from "./form";
 export default {
   component: SelectMultipleField,
   title: "Material UI/Select/Multiple",
-} as Meta<typeof SelectMultipleField>;
+} satisfies Meta<typeof SelectMultipleField>;
 
 export const Multiple = {
   decorators: [
     FormDecorator(
       {
         defaultValues: { selectMultipleField: [] },
-        resolver: zodResolver(selectMultipleFieldSchema, {
-          errorMap: arrayErrorMap,
-        }),
+        resolver: zodResolver(selectMultipleFieldSchema),
       },
       {
         githubPath: "material-ui/Select/Multiple",

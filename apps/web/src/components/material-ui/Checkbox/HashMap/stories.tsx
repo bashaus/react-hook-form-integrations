@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 import { Season } from "@/helpers/options";
@@ -10,7 +10,7 @@ import { checkboxHashMapFieldSchema } from "./form";
 export default {
   component: CheckboxHashMapField,
   title: "Material UI/Checkbox/Hash Map",
-} as Meta<typeof CheckboxHashMapField>;
+} satisfies Meta<typeof CheckboxHashMapField>;
 
 export const HashMap = {
   decorators: [

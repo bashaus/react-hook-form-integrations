@@ -1,8 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
-import { enumErrorMap } from "@/resolvers/zod/error-map/enum";
 
 import AutocompleteSingleField from ".";
 import { autocompleteSingleFieldSchema } from "./form";
@@ -10,16 +9,14 @@ import { autocompleteSingleFieldSchema } from "./form";
 export default {
   component: AutocompleteSingleField,
   title: "Material UI/Autocomplete/Single",
-} as Meta<typeof AutocompleteSingleField>;
+} satisfies Meta<typeof AutocompleteSingleField>;
 
 export const Single = {
   decorators: [
     FormDecorator(
       {
         defaultValues: { autocompleteSingleField: null },
-        resolver: zodResolver(autocompleteSingleFieldSchema, {
-          errorMap: enumErrorMap,
-        }),
+        resolver: zodResolver(autocompleteSingleFieldSchema),
       },
       {
         githubPath: "material-ui/Autocomplete/Single",

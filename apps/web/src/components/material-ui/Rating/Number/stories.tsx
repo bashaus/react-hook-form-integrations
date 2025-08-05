@@ -1,8 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
-import { numberErrorMap } from "@/resolvers/zod/error-map/number";
 
 import RatingNumberField from ".";
 import { ratingNumberFieldSchema } from "./form";
@@ -10,16 +9,14 @@ import { ratingNumberFieldSchema } from "./form";
 export default {
   component: RatingNumberField,
   title: "Material UI/Rating/Number",
-} as Meta<typeof RatingNumberField>;
+} satisfies Meta<typeof RatingNumberField>;
 
 export const Number = {
   decorators: [
     FormDecorator(
       {
         defaultValues: { ratingNumberField: null },
-        resolver: zodResolver(ratingNumberFieldSchema, {
-          errorMap: numberErrorMap,
-        }),
+        resolver: zodResolver(ratingNumberFieldSchema),
       },
       {
         githubPath: "material-ui/Rating/Number",

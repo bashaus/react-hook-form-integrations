@@ -1,8 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
-import { stringErrorMap } from "@/resolvers/zod/error-map/string";
 
 import TextFieldStringField from ".";
 import { textFieldStringFieldSchema } from "./form";
@@ -10,16 +9,14 @@ import { textFieldStringFieldSchema } from "./form";
 export default {
   component: TextFieldStringField,
   title: "Material UI/Text Field/String",
-} as Meta<typeof TextFieldStringField>;
+} satisfies Meta<typeof TextFieldStringField>;
 
 export const String = {
   decorators: [
     FormDecorator(
       {
         defaultValues: { textFieldStringField: "" },
-        resolver: zodResolver(textFieldStringFieldSchema, {
-          errorMap: stringErrorMap,
-        }),
+        resolver: zodResolver(textFieldStringFieldSchema),
       },
       {
         githubPath: "material-ui/TexField/String",

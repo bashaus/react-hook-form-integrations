@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
@@ -9,7 +9,7 @@ import { checkboxBooleanFieldSchema } from "./form";
 export default {
   component: CheckboxBooleanField,
   title: "Material UI/Checkbox/Boolean",
-} as Meta<typeof CheckboxBooleanField>;
+} satisfies Meta<typeof CheckboxBooleanField>;
 
 export const Boolean = {
   decorators: [

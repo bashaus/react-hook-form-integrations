@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
 
@@ -9,7 +9,7 @@ import { sliderRangeFieldSchema } from "./form";
 export default {
   component: SliderRangeField,
   title: "Material UI/Slider/Range",
-} as Meta<typeof SliderRangeField>;
+} satisfies Meta<typeof SliderRangeField>;
 
 export const Range = {
   decorators: [

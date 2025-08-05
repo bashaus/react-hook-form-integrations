@@ -1,8 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-webpack5";
 
 import FormDecorator from "@/decorators/FormDecorator";
-import { requiredErrorMap } from "@/resolvers/zod/error-map/required";
 
 import CheckboxRequiredField from ".";
 import { checkboxRequiredFieldSchema } from "./form";
@@ -10,16 +9,14 @@ import { checkboxRequiredFieldSchema } from "./form";
 export default {
   component: CheckboxRequiredField,
   title: "Material UI/Checkbox/Required",
-} as Meta<typeof CheckboxRequiredField>;
+} satisfies Meta<typeof CheckboxRequiredField>;
 
 export const Required = {
   decorators: [
     FormDecorator(
       {
         defaultValues: { checkboxRequiredField: false },
-        resolver: zodResolver(checkboxRequiredFieldSchema, {
-          errorMap: requiredErrorMap,
-        }),
+        resolver: zodResolver(checkboxRequiredFieldSchema),
       },
       {
         githubPath: "material-ui/Checkbox/Required",
