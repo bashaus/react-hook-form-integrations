@@ -14,12 +14,12 @@ export default function AutocompleteMultipleField() {
     <Controller
       name="autocompleteMultipleField"
       control={control}
-      render={({ field: { onChange, ...field }, fieldState }) => (
+      render={({ field: { onChange, value = [], ...field }, fieldState }) => (
         <Autocomplete
           {...field}
           options={seasons}
           multiple
-          value={field.value ?? []}
+          value={value}
           onChange={(_e, data) => onChange(data)}
           renderInput={(params) => (
             <TextField

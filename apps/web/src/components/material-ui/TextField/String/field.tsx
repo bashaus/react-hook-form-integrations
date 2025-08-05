@@ -11,11 +11,12 @@ export default function TextFieldStringField() {
     <Controller
       name="textFieldStringField"
       control={control}
-      render={({ field, fieldState }) => (
+      render={({ field: { value = "", ...field }, fieldState }) => (
         <TextField
           {...field}
           fullWidth
           label="Text field"
+          value={value}
           error={fieldState.invalid}
           helperText={<ErrorMessage name={field.name} />}
         />

@@ -14,13 +14,13 @@ export default function AutocompleteFreeSoloField() {
     <Controller
       name="autocompleteFreeSoloField"
       control={control}
-      render={({ field: { onChange, ...field }, fieldState }) => (
+      render={({ field: { onChange, value = [], ...field }, fieldState }) => (
         <Autocomplete
           {...field}
           options={seasons}
           freeSolo
           multiple
-          value={field.value ?? []}
+          value={value}
           onChange={(_e, data) => onChange(data)}
           renderInput={(params) => (
             <TextField

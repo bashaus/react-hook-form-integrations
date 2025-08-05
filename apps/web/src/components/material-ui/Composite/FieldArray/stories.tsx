@@ -15,7 +15,6 @@ export const FieldArray = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { compositeFieldArrayField: [] },
         resolver: zodResolver(compositeFieldArrayFieldSchema),
       },
       {

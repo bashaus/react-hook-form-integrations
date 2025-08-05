@@ -51,22 +51,24 @@ export default function CompositeFieldArrayField() {
               <TableContainer>
                 <Table>
                   <TableHead>
-                    <TableCell width="90%">Field name</TableCell>
-                    <TableCell>
-                      <IconButton disabled>
-                        <RemoveCircleIcon />
-                      </IconButton>
-                    </TableCell>
-                    <TableCell>
-                      <IconButton disabled>
-                        <ArrowUpwardRoundedIcon />
-                      </IconButton>
-                    </TableCell>
-                    <TableCell>
-                      <IconButton disabled>
-                        <ArrowDownwardRoundedIcon />
-                      </IconButton>
-                    </TableCell>
+                    <TableRow>
+                      <TableCell width="90%">Field name</TableCell>
+                      <TableCell>
+                        <IconButton disabled>
+                          <RemoveCircleIcon />
+                        </IconButton>
+                      </TableCell>
+                      <TableCell>
+                        <IconButton disabled>
+                          <ArrowUpwardRoundedIcon />
+                        </IconButton>
+                      </TableCell>
+                      <TableCell>
+                        <IconButton disabled>
+                          <ArrowDownwardRoundedIcon />
+                        </IconButton>
+                      </TableCell>
+                    </TableRow>
                   </TableHead>
 
                   <TableBody>

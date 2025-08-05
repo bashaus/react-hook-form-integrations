@@ -11,9 +11,9 @@ export default function DropzoneFileUploadField() {
     <Controller
       name="dropzoneFileUploadField"
       control={control}
-      render={({ field }) => (
+      render={({ field: { onChange, value = [], ...field } }) => (
         <>
-          <Dropzone onDropAccepted={field.onChange}>
+          <Dropzone onDropAccepted={onChange}>
             {({ getRootProps, getInputProps, isDragActive }) => (
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
@@ -28,7 +28,7 @@ export default function DropzoneFileUploadField() {
           </Dropzone>
 
           <ol>
-            {field.value.map((file, i) => (
+            {value.map((file, i) => (
               <li key={i}>
                 {file.name}
                 <br />

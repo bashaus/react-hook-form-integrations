@@ -15,7 +15,6 @@ export const Multiple = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { autocompleteMultipleField: [] },
         resolver: zodResolver(autocompleteMultipleFieldSchema),
       },
       {

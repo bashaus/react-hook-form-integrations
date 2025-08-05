@@ -14,11 +14,11 @@ export default function AutocompleteSingleField() {
     <Controller
       name="autocompleteSingleField"
       control={control}
-      render={({ field: { onChange, ...field }, fieldState }) => (
+      render={({ field: { onChange, value = "", ...field }, fieldState }) => (
         <Autocomplete
           {...field}
           options={seasons}
-          value={field.value ?? ""}
+          value={value}
           onChange={(_e, data) => onChange(data)}
           renderInput={(params) => (
             <TextField

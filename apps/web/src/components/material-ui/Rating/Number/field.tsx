@@ -14,10 +14,10 @@ export default function RatingNumberField() {
     <Controller
       name="ratingNumberField"
       control={control}
-      render={({ field, fieldState }) => (
+      render={({ field: { value = 0, ...field }, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
           <FormLabel>Rating</FormLabel>
-          <Rating {...field} />
+          <Rating {...field} value={value} />
           <ErrorMessage name={field.name} as={FormHelperText} />
         </FormControl>
       )}

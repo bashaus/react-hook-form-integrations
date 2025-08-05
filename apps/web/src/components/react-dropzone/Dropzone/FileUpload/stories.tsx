@@ -15,7 +15,6 @@ export const FileUpload = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { dropzoneFileUploadField: [] },
         resolver: zodResolver(dropzoneFileUploadFieldSchema),
       },
       {

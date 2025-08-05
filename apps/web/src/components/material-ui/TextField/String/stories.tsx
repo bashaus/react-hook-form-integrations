@@ -15,7 +15,6 @@ export const String = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { textFieldStringField: "" },
         resolver: zodResolver(textFieldStringFieldSchema),
       },
       {

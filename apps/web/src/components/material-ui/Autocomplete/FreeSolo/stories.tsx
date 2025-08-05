@@ -15,7 +15,6 @@ export const FreeSolo = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { autocompleteFreeSoloField: [] },
         resolver: zodResolver(autocompleteFreeSoloFieldSchema),
       },
       {

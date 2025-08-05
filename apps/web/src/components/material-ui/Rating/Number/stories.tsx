@@ -15,7 +15,6 @@ export const Number = {
   decorators: [
     FormDecorator(
       {
-        defaultValues: { ratingNumberField: null },
         resolver: zodResolver(ratingNumberFieldSchema),
       },
       {

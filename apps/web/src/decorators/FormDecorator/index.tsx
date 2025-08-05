@@ -47,7 +47,9 @@ export default function FormDecorator<Schema extends FieldValues>(
             </Box>
 
             <Stack direction="row" p={2} spacing={2}>
-              <Button type="submit">Submit</Button>
+              <Button type="submit" variant="contained">
+                Submit
+              </Button>
 
               <Divider orientation="vertical" flexItem />
 
