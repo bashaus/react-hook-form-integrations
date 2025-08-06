@@ -5,19 +5,19 @@ import FormHelperText from "@mui/material/FormHelperText";
 import Switch from "@mui/material/Switch";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { SwitchRequiredFieldSchema } from "./schema";
+import { MuiSwitchBooleanSchema } from "./schema";
 
-export default function SwitchRequiredField() {
-  const { control } = useFormContext<SwitchRequiredFieldSchema>();
+export default function MuiSwitchBooleanView() {
+  const { control } = useFormContext<MuiSwitchBooleanSchema>();
 
   return (
     <Controller
-      name="switchRequiredField"
+      name="muiSwitchBoolean"
       control={control}
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
           <FormControlLabel
-            label="Agree to terms and conditions"
+            label="Subscribe to newsletter"
             control={<Switch {...field} />}
           />
 

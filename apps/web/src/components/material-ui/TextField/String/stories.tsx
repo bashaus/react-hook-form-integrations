@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import TextFieldStringField from "./field";
-import { textFieldStringFieldSchema } from "./schema";
+import { muiTextFieldStringSchema } from "./schema";
+import MuiTextFieldStringView from "./view";
 
 export default {
-  component: TextFieldStringField,
+  component: MuiTextFieldStringView,
   title: "Material UI/Text Field/String",
-} satisfies Meta<typeof TextFieldStringField>;
+} satisfies Meta<typeof MuiTextFieldStringView>;
 
 export const String = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(textFieldStringFieldSchema),
+        resolver: zodResolver(muiTextFieldStringSchema),
       },
       {
         githubPath: "material-ui/TextField/String",

@@ -6,20 +6,20 @@ import FormGroup from "@mui/material/FormGroup";
 import FormHelperText from "@mui/material/FormHelperText";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { CheckboxBooleanFieldSchema } from "./schema";
+import { MuiCheckboxRequiredSchema } from "./schema";
 
-export default function CheckboxBooleanField() {
-  const { control } = useFormContext<CheckboxBooleanFieldSchema>();
+export default function MuiCheckboxRequiredView() {
+  const { control } = useFormContext<MuiCheckboxRequiredSchema>();
 
   return (
     <Controller
-      name="checkboxBooleanField"
+      name="muiCheckboxRequired"
       control={control}
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
           <FormGroup>
             <FormControlLabel
-              label="Subscribe to newsletter"
+              label="muiCheckboxRequired"
               control={<Checkbox {...field} />}
             />
           </FormGroup>

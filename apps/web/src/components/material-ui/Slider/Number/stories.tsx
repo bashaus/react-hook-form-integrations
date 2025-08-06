@@ -3,20 +3,20 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import SliderNumberField from "./field";
-import { sliderNumberFieldSchema } from "./schema";
+import { muiSliderNumberSchema } from "./schema";
+import MuiSliderNumberView from "./view";
 
 export default {
-  component: SliderNumberField,
+  component: MuiSliderNumberView,
   title: "Material UI/Slider/Number",
-} satisfies Meta<typeof SliderNumberField>;
+} satisfies Meta<typeof MuiSliderNumberView>;
 
 export const Number = {
   decorators: [
     HookFormDecorator(
       {
-        defaultValues: { sliderNumberField: 0 },
-        resolver: zodResolver(sliderNumberFieldSchema),
+        defaultValues: { muiSliderNumber: 0 },
+        resolver: zodResolver(muiSliderNumberSchema),
       },
       {
         githubPath: "material-ui/Slider/Number",

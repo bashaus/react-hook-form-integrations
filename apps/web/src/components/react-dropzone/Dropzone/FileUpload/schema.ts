@@ -1,9 +1,7 @@
 import { z } from "zod";
 
-export const dropzoneFileUploadFieldSchema = z.object({
-  dropzoneFileUploadField: z.array(z.custom<File>()).min(1),
+export const dropzoneFileUploadSchema = z.object({
+  dropzoneFileUpload: z.array(z.custom<File>()).min(1),
 });
 
-export type DropzoneFileUploadFieldFieldSchema = z.infer<
-  typeof dropzoneFileUploadFieldSchema
->;
+export type DropzoneFileUploadSchema = z.infer<typeof dropzoneFileUploadSchema>;

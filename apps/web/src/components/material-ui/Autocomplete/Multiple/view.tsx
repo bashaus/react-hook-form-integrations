@@ -5,14 +5,14 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { AutocompleteMultipleFieldSchema } from "./schema";
+import { MuiAutocompleteMultipleSchema } from "./schema";
 
-export default function AutocompleteMultipleField() {
-  const { control } = useFormContext<AutocompleteMultipleFieldSchema>();
+export default function MuiAutocompleteMultipleView() {
+  const { control } = useFormContext<MuiAutocompleteMultipleSchema>();
 
   return (
     <Controller
-      name="autocompleteMultipleField"
+      name="muiAutocompleteMultiple"
       control={control}
       render={({ field: { onChange, value = [], ...field }, fieldState }) => (
         <Autocomplete

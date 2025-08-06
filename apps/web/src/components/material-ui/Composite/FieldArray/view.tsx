@@ -20,20 +20,20 @@ import TextField from "@mui/material/TextField";
 import Tooltip from "@mui/material/Tooltip";
 import { Controller, useFieldArray, useFormContext } from "react-hook-form";
 
-import { CompositeFieldArrayFieldSchema } from "./schema";
+import { MuiCompositeFieldArraySchema } from "./schema";
 
-export default function CompositeFieldArrayField() {
-  const { control } = useFormContext<CompositeFieldArrayFieldSchema>();
+export default function MuiCompositeFieldArrayView() {
+  const { control } = useFormContext<MuiCompositeFieldArraySchema>();
   const fieldArray = useFieldArray({
     control,
-    name: "compositeFieldArrayField",
+    name: "muiCompositeFieldArray",
   });
   const { fields, append, remove, swap, prepend } = fieldArray;
 
   return (
     <Controller
       control={control}
-      name="compositeFieldArrayField"
+      name="muiCompositeFieldArray"
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
           <Stack spacing={2}>
@@ -75,7 +75,7 @@ export default function CompositeFieldArrayField() {
                     {fields.map((field, i) => (
                       <TableRow key={field.id}>
                         <Controller
-                          name={`compositeFieldArrayField.${i}.fieldName`}
+                          name={`muiCompositeFieldArray.${i}.fieldName`}
                           control={control}
                           render={({ field, fieldState }) => (
                             <TableCell>

@@ -2,22 +2,22 @@ import { ErrorMessage } from "@hookform/error-message";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
-import Rating from "@mui/material/Rating";
+import Slider from "@mui/material/Slider";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { RatingNumberFieldSchema } from "./schema";
+import { MuiSliderRangeSchema } from "./schema";
 
-export default function RatingNumberField() {
-  const { control } = useFormContext<RatingNumberFieldSchema>();
+export default function MuiSliderRangeView() {
+  const { control } = useFormContext<MuiSliderRangeSchema>();
 
   return (
     <Controller
-      name="ratingNumberField"
+      name="muiSliderRange"
       control={control}
-      render={({ field: { value = 0, ...field }, fieldState }) => (
+      render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
-          <FormLabel>Rating</FormLabel>
-          <Rating {...field} value={value} />
+          <FormLabel>Slider</FormLabel>
+          <Slider {...field} min={0} max={100} />
           <ErrorMessage name={field.name} as={FormHelperText} />
         </FormControl>
       )}

@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import SelectMultipleField from "./field";
-import { selectMultipleFieldSchema } from "./schema";
+import { muiSelectMultipleSchema } from "./schema";
+import MuiSelectMultipleView from "./view";
 
 export default {
-  component: SelectMultipleField,
+  component: MuiSelectMultipleView,
   title: "Material UI/Select/Multiple",
-} satisfies Meta<typeof SelectMultipleField>;
+} satisfies Meta<typeof MuiSelectMultipleView>;
 
 export const Multiple = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(selectMultipleFieldSchema),
+        resolver: zodResolver(muiSelectMultipleSchema),
       },
       {
         githubPath: "material-ui/Select/Multiple",

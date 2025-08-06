@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import SwitchRequiredField from "./field";
-import { switchRequiredFieldSchema } from "./schema";
+import { muiSwitchRequiredSchema } from "./schema";
+import MuiSwitchRequiredView from "./view";
 
 export default {
-  component: SwitchRequiredField,
+  component: MuiSwitchRequiredView,
   title: "Material UI/Switch/Required",
-} satisfies Meta<typeof SwitchRequiredField>;
+} satisfies Meta<typeof MuiSwitchRequiredView>;
 
 export const Required = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(switchRequiredFieldSchema),
+        resolver: zodResolver(muiSwitchRequiredSchema),
       },
       {
         githubPath: "material-ui/Switch/Required",

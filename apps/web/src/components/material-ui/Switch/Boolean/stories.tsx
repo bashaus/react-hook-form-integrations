@@ -3,20 +3,20 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import SwitchBooleanField from "./field";
-import { switchBooleanFieldSchema } from "./schema";
+import { muiSwitchBooleanSchema } from "./schema";
+import MuiSwitchBooleanView from "./view";
 
 export default {
-  component: SwitchBooleanField,
+  component: MuiSwitchBooleanView,
   title: "Material UI/Switch/Boolean",
-} satisfies Meta<typeof SwitchBooleanField>;
+} satisfies Meta<typeof MuiSwitchBooleanView>;
 
 export const Boolean = {
   decorators: [
     HookFormDecorator(
       {
-        defaultValues: { switchBooleanField: false },
-        resolver: zodResolver(switchBooleanFieldSchema),
+        defaultValues: { muiSwitchBoolean: false },
+        resolver: zodResolver(muiSwitchBooleanSchema),
       },
       {
         githubPath: "material-ui/Switch/Boolean",

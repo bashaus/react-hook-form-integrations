@@ -1,9 +1,7 @@
 import { z } from "zod";
 
-export const switchRequiredFieldSchema = z.object({
-  switchRequiredField: z.literal(true),
+export const muiSwitchRequiredSchema = z.object({
+  muiSwitchRequired: z.literal(true),
 });
 
-export type SwitchRequiredFieldSchema = z.infer<
-  typeof switchRequiredFieldSchema
->;
+export type MuiSwitchRequiredSchema = z.infer<typeof muiSwitchRequiredSchema>;

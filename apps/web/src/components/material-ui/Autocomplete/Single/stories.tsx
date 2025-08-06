@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import AutocompleteSingleField from "./field";
-import { autocompleteSingleFieldSchema } from "./schema";
+import { muiAutocompleteSingleSchema } from "./schema";
+import MuiAutocompleteSingleView from "./view";
 
 export default {
-  component: AutocompleteSingleField,
+  component: MuiAutocompleteSingleView,
   title: "Material UI/Autocomplete/Single",
-} satisfies Meta<typeof AutocompleteSingleField>;
+} satisfies Meta<typeof MuiAutocompleteSingleView>;
 
 export const Single = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(autocompleteSingleFieldSchema),
+        resolver: zodResolver(muiAutocompleteSingleSchema),
       },
       {
         githubPath: "material-ui/Autocomplete/Single",

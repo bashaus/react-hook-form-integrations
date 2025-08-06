@@ -1,26 +1,23 @@
 import { ErrorMessage } from "@hookform/error-message";
 import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
-import Switch from "@mui/material/Switch";
+import FormLabel from "@mui/material/FormLabel";
+import Slider from "@mui/material/Slider";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { SwitchBooleanFieldSchema } from "./schema";
+import { MuiSliderNumberSchema } from "./schema";
 
-export default function SwitchBooleanField() {
-  const { control } = useFormContext<SwitchBooleanFieldSchema>();
+export default function MuiSliderNumberView() {
+  const { control } = useFormContext<MuiSliderNumberSchema>();
 
   return (
     <Controller
-      name="switchBooleanField"
+      name="muiSliderNumber"
       control={control}
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
-          <FormControlLabel
-            label="Subscribe to newsletter"
-            control={<Switch {...field} />}
-          />
-
+          <FormLabel>Slider</FormLabel>
+          <Slider {...field} min={0} max={100} />
           <ErrorMessage name={field.name} as={FormHelperText} />
         </FormControl>
       )}

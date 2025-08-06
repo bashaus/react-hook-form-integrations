@@ -8,19 +8,19 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { SelectMultipleFieldSchema } from "./schema";
+import { MuiSelectSingleSchema } from "./schema";
 
-export default function SelectMultipleField() {
-  const { control } = useFormContext<SelectMultipleFieldSchema>();
+export default function MuiSelectSingleView() {
+  const { control } = useFormContext<MuiSelectSingleSchema>();
 
   return (
     <Controller
-      name="selectMultipleField"
+      name="muiSelectSingle"
       control={control}
-      render={({ field: { value = [], ...field }, fieldState }) => (
+      render={({ field: { value = "", ...field }, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
-          <InputLabel>Seasons</InputLabel>
-          <Select {...field} value={value} multiple label="Seasons">
+          <InputLabel>Season</InputLabel>
+          <Select {...field} value={value} label="Season">
             {seasons.map((season) => (
               <MenuItem key={season} value={season}>
                 {season}

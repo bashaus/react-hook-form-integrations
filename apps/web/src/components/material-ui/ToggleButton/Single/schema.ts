@@ -2,8 +2,8 @@ import { z } from "zod";
 
 import { Season } from "@/helpers/options";
 
-export const toggleButtonFieldSchema = z.object({
-  toggleButtonField: z.enum(Season),
+export const muiToggleButtonSchema = z.object({
+  muiToggleButton: z.enum(Season),
 });
 
-export type ToggleButtonFieldSchema = z.infer<typeof toggleButtonFieldSchema>;
+export type MuiToggleButtonSchema = z.infer<typeof muiToggleButtonSchema>;

@@ -2,8 +2,8 @@ import { z } from "zod";
 
 import { Season } from "@/helpers/options";
 
-export const selectSingleFieldSchema = z.object({
-  selectSingleField: z.enum(Season),
+export const muiSelectSingleSchema = z.object({
+  muiSelectSingle: z.enum(Season),
 });
 
-export type SelectSingleFieldSchema = z.infer<typeof selectSingleFieldSchema>;
+export type MuiSelectSingleSchema = z.infer<typeof muiSelectSingleSchema>;

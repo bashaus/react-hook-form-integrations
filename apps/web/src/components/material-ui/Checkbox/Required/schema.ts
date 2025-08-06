@@ -1,9 +1,9 @@
 import { z } from "zod";
 
-export const checkboxRequiredFieldSchema = z.object({
-  checkboxRequiredField: z.literal(true),
+export const muiCheckboxRequiredSchema = z.object({
+  muiCheckboxRequired: z.literal(true),
 });
 
-export type CheckboxRequiredFieldSchema = z.infer<
-  typeof checkboxRequiredFieldSchema
+export type MuiCheckboxRequiredSchema = z.infer<
+  typeof muiCheckboxRequiredSchema
 >;

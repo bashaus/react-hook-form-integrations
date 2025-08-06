@@ -5,14 +5,14 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { AutocompleteFreeSoloFieldSchema } from "./schema";
+import { MuiAutocompleteFreeSoloSchema } from "./schema";
 
-export default function AutocompleteFreeSoloField() {
-  const { control } = useFormContext<AutocompleteFreeSoloFieldSchema>();
+export default function MuiAutocompleteFreeSoloView() {
+  const { control } = useFormContext<MuiAutocompleteFreeSoloSchema>();
 
   return (
     <Controller
-      name="autocompleteFreeSoloField"
+      name="muiAutocompleteFreeSolo"
       control={control}
       render={({ field: { onChange, value = [], ...field }, fieldState }) => (
         <Autocomplete

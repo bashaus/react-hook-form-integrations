@@ -3,22 +3,22 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import CompositeFieldArrayField from "./field";
-import { compositeFieldArrayFieldSchema } from "./schema";
+import { muiCompositeFieldArraySchema } from "./schema";
+import MuiCompositeFieldArrayView from "./view";
 
 export default {
-  component: CompositeFieldArrayField,
+  component: MuiCompositeFieldArrayView,
   title: "Material UI/Composite/Field Array",
-} satisfies Meta<typeof CompositeFieldArrayField>;
+} satisfies Meta<typeof MuiCompositeFieldArrayView>;
 
-export const FieldArray = {
+export const Array = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(compositeFieldArrayFieldSchema),
+        resolver: zodResolver(muiCompositeFieldArraySchema),
       },
       {
-        githubPath: "material-ui/Composite/FieldArray",
+        githubPath: "material-ui/Composite/Array",
       },
     ),
   ],

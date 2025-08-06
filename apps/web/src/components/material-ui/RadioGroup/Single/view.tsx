@@ -8,14 +8,14 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { RadioGroupFieldSchema } from "./schema";
+import { MuiRadioGroupSchema } from "./schema";
 
-export default function RadioGroupField() {
-  const { control } = useFormContext<RadioGroupFieldSchema>();
+export default function MuiRadioGroupView() {
+  const { control } = useFormContext<MuiRadioGroupSchema>();
 
   return (
     <Controller
-      name="radioGroupField"
+      name="muiRadioGroup"
       control={control}
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>

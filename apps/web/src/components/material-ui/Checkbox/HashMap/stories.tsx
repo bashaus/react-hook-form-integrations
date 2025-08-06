@@ -4,24 +4,24 @@ import type { Meta } from "@storybook/react-webpack5";
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 import { Season } from "@/helpers/options";
 
-import CheckboxHashMapField from "./field";
-import { checkboxHashMapFieldSchema } from "./schema";
+import { muiCheckboxHashMapSchema } from "./schema";
+import MuiCheckboxHashMapView from "./view";
 
 export default {
-  component: CheckboxHashMapField,
+  component: MuiCheckboxHashMapView,
   title: "Material UI/Checkbox/Hash Map",
-} satisfies Meta<typeof CheckboxHashMapField>;
+} satisfies Meta<typeof MuiCheckboxHashMapView>;
 
 export const HashMap = {
   decorators: [
     HookFormDecorator(
       {
         defaultValues: {
-          checkboxHashMapField: Object.fromEntries(
+          muiCheckboxHashMap: Object.fromEntries(
             Object.values(Season).map((season) => [season, false]),
           ),
         },
-        resolver: zodResolver(checkboxHashMapFieldSchema),
+        resolver: zodResolver(muiCheckboxHashMapSchema),
       },
       {
         githubPath: "material-ui/Checkbox/HashMap",

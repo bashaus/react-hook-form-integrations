@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import ToggleButtonField from "./field";
-import { toggleButtonFieldSchema } from "./schema";
+import { muiToggleButtonSchema } from "./schema";
+import MuiToggleButtonView from "./view";
 
 export default {
-  component: ToggleButtonField,
+  component: MuiToggleButtonView,
   title: "Material UI/Toggle Button/Single",
-} satisfies Meta<typeof ToggleButtonField>;
+} satisfies Meta<typeof MuiToggleButtonView>;
 
 export const Single = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(toggleButtonFieldSchema),
+        resolver: zodResolver(muiToggleButtonSchema),
       },
       {
         githubPath: "material-ui/ToggleButton/Single",

@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import CheckboxRequiredField from "./field";
-import { checkboxRequiredFieldSchema } from "./schema";
+import { muiCheckboxRequiredSchema } from "./schema";
+import MuiCheckboxRequiredView from "./view";
 
 export default {
-  component: CheckboxRequiredField,
+  component: MuiCheckboxRequiredView,
   title: "Material UI/Checkbox/Required",
-} satisfies Meta<typeof CheckboxRequiredField>;
+} satisfies Meta<typeof MuiCheckboxRequiredView>;
 
 export const Required = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(checkboxRequiredFieldSchema),
+        resolver: zodResolver(muiCheckboxRequiredSchema),
       },
       {
         githubPath: "material-ui/Checkbox/Required",

@@ -2,14 +2,14 @@ import { ErrorMessage } from "@hookform/error-message";
 import TextField from "@mui/material/TextField";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { TextFieldStringFieldSchema } from "./schema";
+import { MuiTextFieldStringSchema } from "./schema";
 
-export default function TextFieldStringField() {
-  const { control } = useFormContext<TextFieldStringFieldSchema>();
+export default function MuiTextFieldStringView() {
+  const { control } = useFormContext<MuiTextFieldStringSchema>();
 
   return (
     <Controller
-      name="textFieldStringField"
+      name="muiTextFieldString"
       control={control}
       render={({ field: { value = "", ...field }, fieldState }) => (
         <TextField

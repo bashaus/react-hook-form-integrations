@@ -8,21 +8,21 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { CheckboxHashMapFieldSchema } from "./schema";
+import { MuiCheckboxHashMapSchema } from "./schema";
 
-export default function CheckboxHashMapField() {
-  const { control } = useFormContext<CheckboxHashMapFieldSchema>();
+export default function MuiCheckboxHashMapView() {
+  const { control } = useFormContext<MuiCheckboxHashMapSchema>();
 
   return (
     <Controller
-      name="checkboxHashMapField"
+      name="muiCheckboxHashMap"
       control={control}
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
           <FormGroup>
             {seasons.map((season) => (
               <Controller
-                name={`checkboxHashMapField.${season}`}
+                name={`muiCheckboxHashMap.${season}`}
                 control={control}
                 key={season}
                 render={({ field }) => (

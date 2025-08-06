@@ -1,10 +1,10 @@
 import { z } from "zod";
 
-export const sliderRangeFieldSchema = z.object({
-  sliderRangeField: z.tuple([
+export const muiSliderRangeSchema = z.object({
+  muiSliderRange: z.tuple([
     z.coerce.number().min(0).max(100),
     z.coerce.number().min(0).max(100),
   ]),
 });
 
-export type SliderRangeFieldSchema = z.infer<typeof sliderRangeFieldSchema>;
+export type MuiSliderRangeSchema = z.infer<typeof muiSliderRangeSchema>;

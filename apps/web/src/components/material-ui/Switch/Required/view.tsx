@@ -1,23 +1,26 @@
 import { ErrorMessage } from "@hookform/error-message";
 import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
-import FormLabel from "@mui/material/FormLabel";
-import Slider from "@mui/material/Slider";
+import Switch from "@mui/material/Switch";
 import { Controller, useFormContext } from "react-hook-form";
 
-import { SliderRangeFieldSchema } from "./schema";
+import { MuiSwitchRequiredSchema } from "./schema";
 
-export default function SliderRangeField() {
-  const { control } = useFormContext<SliderRangeFieldSchema>();
+export default function MuiSwitchRequiredView() {
+  const { control } = useFormContext<MuiSwitchRequiredSchema>();
 
   return (
     <Controller
-      name="sliderRangeField"
+      name="muiSwitchRequired"
       control={control}
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
-          <FormLabel>Slider</FormLabel>
-          <Slider {...field} min={0} max={100} />
+          <FormControlLabel
+            label="Agree to terms and conditions"
+            control={<Switch {...field} />}
+          />
+
           <ErrorMessage name={field.name} as={FormHelperText} />
         </FormControl>
       )}

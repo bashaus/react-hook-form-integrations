@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import RatingNumberField from "./field";
-import { ratingNumberFieldSchema } from "./schema";
+import { muiRatingNumberSchema } from "./schema";
+import MuiRatingNumberView from "./view";
 
 export default {
-  component: RatingNumberField,
+  component: MuiRatingNumberView,
   title: "Material UI/Rating/Number",
-} satisfies Meta<typeof RatingNumberField>;
+} satisfies Meta<typeof MuiRatingNumberView>;
 
 export const Number = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(ratingNumberFieldSchema),
+        resolver: zodResolver(muiRatingNumberSchema),
       },
       {
         githubPath: "material-ui/Rating/Number",

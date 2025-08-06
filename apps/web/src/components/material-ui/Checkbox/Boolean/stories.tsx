@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import CheckboxBooleanField from "./field";
-import { checkboxBooleanFieldSchema } from "./schema";
+import { muiCheckboxBooleanSchema } from "./schema";
+import MuiCheckboxBoolean from "./view";
 
 export default {
-  component: CheckboxBooleanField,
+  component: MuiCheckboxBoolean,
   title: "Material UI/Checkbox/Boolean",
-} satisfies Meta<typeof CheckboxBooleanField>;
+} satisfies Meta<typeof MuiCheckboxBoolean>;
 
 export const Boolean = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(checkboxBooleanFieldSchema),
+        resolver: zodResolver(muiCheckboxBooleanSchema),
       },
       {
         githubPath: "material-ui/Checkbox/Boolean",

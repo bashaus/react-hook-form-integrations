@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import DropzoneFileUploadField from "./field";
-import { dropzoneFileUploadFieldSchema } from "./schema";
+import { dropzoneFileUploadSchema } from "./schema";
+import DropzoneFileUploadView from "./view";
 
 export default {
-  component: DropzoneFileUploadField,
+  component: DropzoneFileUploadView,
   title: "React Dropzone/Dropzone/File Upload",
-} satisfies Meta<typeof DropzoneFileUploadField>;
+} satisfies Meta<typeof DropzoneFileUploadView>;
 
 export const FileUpload = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(dropzoneFileUploadFieldSchema),
+        resolver: zodResolver(dropzoneFileUploadSchema),
       },
       {
         githubPath: "react-dropzone/Dropzone/FileUpload",

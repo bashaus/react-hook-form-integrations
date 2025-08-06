@@ -3,20 +3,20 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import SliderRangeField from "./field";
-import { sliderRangeFieldSchema } from "./schema";
+import { muiSliderRangeSchema } from "./schema";
+import MuiSliderRangeView from "./view";
 
 export default {
-  component: SliderRangeField,
+  component: MuiSliderRangeView,
   title: "Material UI/Slider/Range",
-} satisfies Meta<typeof SliderRangeField>;
+} satisfies Meta<typeof MuiSliderRangeView>;
 
 export const Range = {
   decorators: [
     HookFormDecorator(
       {
-        defaultValues: { sliderRangeField: [0, 100] },
-        resolver: zodResolver(sliderRangeFieldSchema),
+        defaultValues: { muiSliderRange: [0, 100] },
+        resolver: zodResolver(muiSliderRangeSchema),
       },
       {
         githubPath: "material-ui/Slider/Range",

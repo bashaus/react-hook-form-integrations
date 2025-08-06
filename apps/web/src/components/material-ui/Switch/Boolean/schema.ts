@@ -1,11 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-export const switchBooleanFieldSchema = z.object({
-  switchBooleanField: z.coerce.boolean(),
+export const muiSwitchBooleanSchema = z.object({
+  muiSwitchBoolean: z.coerce.boolean(),
 });
 
-export type SwitchBooleanFieldSchema = z.infer<typeof switchBooleanFieldSchema>;
-export const switchBooleanFieldSchemaResolver = zodResolver(
-  switchBooleanFieldSchema,
+export type MuiSwitchBooleanSchema = z.infer<typeof muiSwitchBooleanSchema>;
+export const muiSwitchBooleanSchemaResolver = zodResolver(
+  muiSwitchBooleanSchema,
 );

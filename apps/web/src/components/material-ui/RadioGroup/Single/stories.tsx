@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import RadioGroupField from "./field";
-import { radioGroupFieldSchema } from "./schema";
+import { muiRadioGroupSchema } from "./schema";
+import MuiRadioGroupView from "./view";
 
 export default {
-  component: RadioGroupField,
+  component: MuiRadioGroupView,
   title: "Material UI/Radio Group/Single",
-} satisfies Meta<typeof RadioGroupField>;
+} satisfies Meta<typeof MuiRadioGroupView>;
 
 export const Single = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(radioGroupFieldSchema),
+        resolver: zodResolver(muiRadioGroupSchema),
       },
       {
         githubPath: "material-ui/RadioGroup/Single",

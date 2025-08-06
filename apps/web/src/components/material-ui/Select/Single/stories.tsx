@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import SelectSingleField from "./field";
-import { selectSingleFieldSchema } from "./schema";
+import { muiSelectSingleSchema } from "./schema";
+import MuiSelectSingleView from "./view";
 
 export default {
-  component: SelectSingleField,
+  component: MuiSelectSingleView,
   title: "Material UI/Select/Single",
-} satisfies Meta<typeof SelectSingleField>;
+} satisfies Meta<typeof MuiSelectSingleView>;
 
 export const Single = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(selectSingleFieldSchema),
+        resolver: zodResolver(muiSelectSingleSchema),
       },
       {
         githubPath: "material-ui/Select/Single",

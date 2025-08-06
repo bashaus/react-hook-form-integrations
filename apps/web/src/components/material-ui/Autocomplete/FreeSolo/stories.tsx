@@ -3,19 +3,19 @@ import type { Meta } from "@storybook/react-webpack5";
 
 import HookFormDecorator from "@/decorators/HookFormDecorator";
 
-import AutocompleteFreeSoloField from "./field";
-import { autocompleteFreeSoloFieldSchema } from "./schema";
+import { muiAutocompleteFreeSoloSchema } from "./schema";
+import MuiAutocompleteFreeSoloView from "./view";
 
 export default {
-  component: AutocompleteFreeSoloField,
+  component: MuiAutocompleteFreeSoloView,
   title: "Material UI/Autocomplete/Free Solo",
-} satisfies Meta<typeof AutocompleteFreeSoloField>;
+} satisfies Meta<typeof MuiAutocompleteFreeSoloView>;
 
 export const FreeSolo = {
   decorators: [
     HookFormDecorator(
       {
-        resolver: zodResolver(autocompleteFreeSoloFieldSchema),
+        resolver: zodResolver(muiAutocompleteFreeSoloSchema),
       },
       {
         githubPath: "material-ui/Autocomplete/FreeSolo",

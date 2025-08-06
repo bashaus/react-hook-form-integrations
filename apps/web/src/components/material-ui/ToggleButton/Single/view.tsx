@@ -8,14 +8,14 @@ import { Controller, useFormContext } from "react-hook-form";
 
 import { seasons } from "@/helpers/options";
 
-import { ToggleButtonFieldSchema } from "./schema";
+import { MuiToggleButtonSchema } from "./schema";
 
-export default function ToggleButtonField() {
-  const { control } = useFormContext<ToggleButtonFieldSchema>();
+export default function MuiToggleButtonView() {
+  const { control } = useFormContext<MuiToggleButtonSchema>();
 
   return (
     <Controller
-      name="toggleButtonField"
+      name="muiToggleButton"
       control={control}
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
