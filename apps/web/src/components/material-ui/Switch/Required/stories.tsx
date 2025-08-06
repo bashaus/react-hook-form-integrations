@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Meta } from "@storybook/react-webpack5";
 
-import FormDecorator from "@/decorators/FormDecorator";
+import HookFormDecorator from "@/decorators/HookFormDecorator";
 
 import SwitchRequiredField from "./field";
 import { switchRequiredFieldSchema } from "./schema";
@@ -13,7 +13,7 @@ export default {
 
 export const Required = {
   decorators: [
-    FormDecorator(
+    HookFormDecorator(
       {
         resolver: zodResolver(switchRequiredFieldSchema),
       },

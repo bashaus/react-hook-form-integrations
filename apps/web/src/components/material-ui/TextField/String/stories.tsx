@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Meta } from "@storybook/react-webpack5";
 
-import FormDecorator from "@/decorators/FormDecorator";
+import HookFormDecorator from "@/decorators/HookFormDecorator";
 
 import TextFieldStringField from "./field";
 import { textFieldStringFieldSchema } from "./schema";
@@ -13,7 +13,7 @@ export default {
 
 export const String = {
   decorators: [
-    FormDecorator(
+    HookFormDecorator(
       {
         resolver: zodResolver(textFieldStringFieldSchema),
       },

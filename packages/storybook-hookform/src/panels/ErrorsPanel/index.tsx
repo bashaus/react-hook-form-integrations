@@ -26,8 +26,8 @@ export default function ErrorsPanel({ active = false }: ErrorsPanelProps) {
           <ReactJson name="errors" src={errors} />
         ) : (
           <EmptyTabContent
-            title="Waiting for form submission"
-            description="Submit the form to check for errors"
+            title="Waiting for form submission."
+            description="Submit the form to check for errors. If you're still seeing this error, ensure that HookFormDecorator has been added to the story."
           />
         )}
       </div>

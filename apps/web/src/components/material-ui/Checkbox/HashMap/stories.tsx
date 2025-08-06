@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Meta } from "@storybook/react-webpack5";
 
-import FormDecorator from "@/decorators/FormDecorator";
+import HookFormDecorator from "@/decorators/HookFormDecorator";
 import { Season } from "@/helpers/options";
 
 import CheckboxHashMapField from "./field";
@@ -14,7 +14,7 @@ export default {
 
 export const HashMap = {
   decorators: [
-    FormDecorator(
+    HookFormDecorator(
       {
         defaultValues: {
           checkboxHashMapField: Object.fromEntries(

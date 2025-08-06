@@ -15,16 +15,16 @@ import {
 } from "react-hook-form";
 import { action } from "storybook/actions";
 
-export type FormDecoratorOptions = {
+export type HookFormDecoratorOptions = {
   githubPath: string;
   buttons?: { [title: string]: string };
 };
 
-export default function FormDecorator<Schema extends FieldValues>(
+export default function HookFormDecorator<Schema extends FieldValues>(
   props: UseFormProps<Schema>,
-  options: FormDecoratorOptions,
+  options: HookFormDecoratorOptions,
 ) {
-  return function FormDecoratorImpl(Story: ComponentType) {
+  return function HookFormDecoratorImpl(Story: ComponentType) {
     const { githubPath, buttons = [] } = options;
 
     const form = useForm<Schema>(props);
@@ -34,7 +34,7 @@ export default function FormDecorator<Schema extends FieldValues>(
     const values = watch();
 
     useEffect(() => {
-      emitFormUpdate(isSubmitted ? values : null, isSubmitted ? errors : null);
+      emitFormUpdate(values, errors);
     }, [values, errors, isSubmitted]);
 
     const onSubmit = handleSubmit(action("onValid"), action("onInvalid"));

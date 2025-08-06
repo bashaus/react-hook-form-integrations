@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { Meta } from "@storybook/react-webpack5";
 
-import FormDecorator from "@/decorators/FormDecorator";
+import HookFormDecorator from "@/decorators/HookFormDecorator";
 
 import CheckboxBooleanField from "./field";
 import { checkboxBooleanFieldSchema } from "./schema";
@@ -13,7 +13,7 @@ export default {
 
 export const Boolean = {
   decorators: [
-    FormDecorator(
+    HookFormDecorator(
       {
         resolver: zodResolver(checkboxBooleanFieldSchema),
       },

@@ -26,8 +26,8 @@ export default function ValuesPanel({ active = false }: ValuesPanelProps) {
           <ReactJson name="values" src={values} />
         ) : (
           <EmptyTabContent
-            title="No values received"
-            description="Submit the form to see update these values"
+            title="No values received."
+            description="Submit the form to see update these values. If you're still seeing this error, ensure that HookFormDecorator has been added to the story."
           />
         )}
       </div>
