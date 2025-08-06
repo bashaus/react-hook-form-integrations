@@ -3,20 +3,22 @@ import ReactJson from "react-json-view";
 import { AddonPanel, EmptyTabContent } from "storybook/internal/components";
 import { addons } from "storybook/manager-api";
 
-import { EVENT_SUBMIT_VALUES } from "../../constants";
+import { EVENT_FORM_VALUES_UPDATE } from "../../constants";
 
-export type ValuesPanelProps = Readonly<{
+export type FormValuesPanelProps = Readonly<{
   active?: boolean;
 }>;
 
-export default function ValuesPanel({ active = false }: ValuesPanelProps) {
+export default function FormValuesPanel({
+  active = false,
+}: FormValuesPanelProps) {
   const [values, setValues] = useState<unknown>(null);
 
   useEffect(() => {
     const channel = addons.getChannel();
     const handler = (payload: unknown) => setValues(payload);
-    channel.on(EVENT_SUBMIT_VALUES, handler);
-    return () => channel.off(EVENT_SUBMIT_VALUES, handler);
+    channel.on(EVENT_FORM_VALUES_UPDATE, handler);
+    return () => channel.off(EVENT_FORM_VALUES_UPDATE, handler);
   }, []);
 
   return (
@@ -27,7 +29,7 @@ export default function ValuesPanel({ active = false }: ValuesPanelProps) {
         ) : (
           <EmptyTabContent
             title="No values received."
-            description="Submit the form to see update these values. If you're still seeing this error, ensure that HookFormDecorator has been added to the story."
+            description="Submit the form to see update these values. If you're still seeing this error, ensure that FormEmitter has been added to the story."
           />
         )}
       </div>

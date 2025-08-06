@@ -1,6 +1,7 @@
 export const ADDON_ID = "storybook-hookform";
-export const PANEL_VALUES_ID = `${ADDON_ID}/values`;
-export const PANEL_ERRORS_ID = `${ADDON_ID}/errors`;
+export const PANEL_FORM_VALUES_ID = `${ADDON_ID}/form-values`;
+export const PANEL_FORM_STATE_ID = `${ADDON_ID}/form-state`;
+export const PANEL_FORM_ERRORS_ID = `${ADDON_ID}/form-errors`;
 
-export const EVENT_SUBMIT_VALUES = `${ADDON_ID}/submit-values`;
-export const EVENT_SUBMIT_ERRORS = `${ADDON_ID}/submit-errors`;
+export const EVENT_FORM_VALUES_UPDATE = `${ADDON_ID}/form-values-update`;
+export const EVENT_FORM_STATE_UPDATE = `${ADDON_ID}/form-state-update`;

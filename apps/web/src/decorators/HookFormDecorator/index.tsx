@@ -5,8 +5,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import Stack from "@mui/material/Stack";
-import { emitFormUpdate } from "@repo/storybook-hookform/preview";
-import { ComponentType, useEffect } from "react";
+import { FormEmitter } from "@repo/storybook-hookform/preview";
+import { ComponentType } from "react";
 import {
   FieldValues,
   FormProvider,
@@ -20,27 +20,24 @@ export type HookFormDecoratorOptions = {
   buttons?: { [title: string]: string };
 };
 
-export default function HookFormDecorator<Schema extends FieldValues>(
-  props: UseFormProps<Schema>,
+export default function HookFormDecorator<TFieldValues extends FieldValues>(
+  props: UseFormProps<TFieldValues>,
   options: HookFormDecoratorOptions,
 ) {
   return function HookFormDecoratorImpl(Story: ComponentType) {
     const { githubPath, buttons = [] } = options;
 
-    const form = useForm<Schema>(props);
-    const { formState, handleSubmit, watch } = form;
+    const form = useForm<TFieldValues>(props);
+    const { formState, handleSubmit } = form;
 
-    const { isSubmitted, isSubmitting, errors } = formState;
-    const values = watch();
-
-    useEffect(() => {
-      emitFormUpdate(values, errors);
-    }, [values, errors, isSubmitted]);
+    const { isSubmitting } = formState;
 
     const onSubmit = handleSubmit(action("onValid"), action("onInvalid"));
 
     return (
       <FormProvider {...form}>
+        <FormEmitter />
+
         <Card component="form" onSubmit={onSubmit}>
           <Box p={2}>
             <Story />

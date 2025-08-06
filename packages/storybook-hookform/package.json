@@ -19,10 +19,12 @@
     "react-json-view": "^1.21.3"
   },
   "devDependencies": {
+    "react-hook-form": "^7.62.0",
     "storybook": "^9.1.1",
     "typescript": "^5.0.0"
   },
   "peerDependencies": {
+    "react-hook-form": "^7",
     "storybook": "^9.0.0"
   }
 }

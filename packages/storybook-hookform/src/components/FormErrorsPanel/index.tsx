@@ -1,22 +1,28 @@
 import { useEffect, useState } from "react";
+import { FieldValues, FormState } from "react-hook-form";
 import ReactJson from "react-json-view";
 import { AddonPanel, EmptyTabContent } from "storybook/internal/components";
 import { addons } from "storybook/manager-api";
 
-import { EVENT_SUBMIT_ERRORS } from "../../constants";
+import { EVENT_FORM_STATE_UPDATE } from "../../constants";
 
-export type ErrorsPanelProps = Readonly<{
+export type FormErrorsPanelProps = Readonly<{
   active?: boolean;
 }>;
 
-export default function ErrorsPanel({ active = false }: ErrorsPanelProps) {
+export default function FormErrorsPanel({
+  active = false,
+}: FormErrorsPanelProps) {
   const [errors, setErrors] = useState<object | null>(null);
 
   useEffect(() => {
+    const handler = (payload: FormState<FieldValues>) => {
+      setErrors(payload.submitCount > 0 ? payload.errors : null);
+    };
+
     const channel = addons.getChannel();
-    const handler = (payload: object) => setErrors(payload);
-    channel.on(EVENT_SUBMIT_ERRORS, handler);
-    return () => channel.off(EVENT_SUBMIT_ERRORS, handler);
+    channel.on(EVENT_FORM_STATE_UPDATE, handler);
+    return () => channel.off(EVENT_FORM_STATE_UPDATE, handler);
   }, []);
 
   return (
@@ -27,7 +33,7 @@ export default function ErrorsPanel({ active = false }: ErrorsPanelProps) {
         ) : (
           <EmptyTabContent
             title="Waiting for form submission."
-            description="Submit the form to check for errors. If you're still seeing this error, ensure that HookFormDecorator has been added to the story."
+            description="Submit the form to check for errors. If you're still seeing this error, ensure that FormEmitter has been added to the story."
           />
         )}
       </div>
