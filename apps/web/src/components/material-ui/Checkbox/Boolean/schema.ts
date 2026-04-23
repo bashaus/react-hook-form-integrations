@@ -1,9 +1,7 @@
 import { z } from "zod";
 
-import { coerceUndefinedToFalse } from "@/resolvers/zod/coerce";
-
 export const muiCheckboxBooleanSchema = z.object({
-  muiCheckboxBoolean: z.preprocess(coerceUndefinedToFalse, z.boolean()),
+  muiCheckboxBoolean: z.boolean().prefault(false),
 });
 
 export type MuiCheckboxBooleanSchema = z.infer<typeof muiCheckboxBooleanSchema>;
