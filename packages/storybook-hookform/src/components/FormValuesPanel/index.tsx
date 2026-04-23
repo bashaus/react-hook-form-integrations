@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import ReactJson from "react-json-view";
 import { AddonPanel, EmptyTabContent } from "storybook/internal/components";
 import { addons } from "storybook/manager-api";
 
 import { EVENT_FORM_VALUES_UPDATE } from "../../constants";
+import ViewJson from "../ViewJson";
 
 export type FormValuesPanelProps = Readonly<{
   active?: boolean;
@@ -25,7 +25,7 @@ export default function FormValuesPanel({
     <AddonPanel active={active}>
       <div style={{ padding: 16 }}>
         {values ? (
-          <ReactJson name="values" src={values} />
+          <ViewJson name="values" src={values} />
         ) : (
           <EmptyTabContent
             title="No values received."

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { FieldValues, FormState } from "react-hook-form";
-import ReactJson from "react-json-view";
 import { AddonPanel, EmptyTabContent } from "storybook/internal/components";
 import { addons } from "storybook/manager-api";
 
 import { EVENT_FORM_STATE_UPDATE } from "../../constants";
+import ViewJson from "../ViewJson";
 
 export type FormStatePanelProps = Readonly<{
   active?: boolean;
@@ -29,7 +29,7 @@ export default function FormStatePanel({
     <AddonPanel active={active}>
       <div style={{ padding: 16 }}>
         {formState ? (
-          <ReactJson name="formState" src={formState} />
+          <ViewJson name="formState" src={formState} />
         ) : (
           <EmptyTabContent
             title="Waiting for form state."
