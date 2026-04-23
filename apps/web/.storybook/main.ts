@@ -1,6 +1,10 @@
+import { createRequire } from "node:module";
+
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import { dirname, join } from "path";
 import TsconfigPathsPlugin from "tsconfig-paths-webpack-plugin";
+
+const require = createRequire(import.meta.url);
 
 function getAbsolutePath(value: string) {
   return dirname(require.resolve(join(value, "package.json")));
