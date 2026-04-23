@@ -38,6 +38,6 @@
     "eslint-plugin-storybook": "10.3.5",
     "storybook": "^10.3.5",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
-    "typescript": "5.9.2"
+    "typescript": "^6.0.3"
   }
 }
