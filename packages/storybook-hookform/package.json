@@ -1,17 +1,15 @@
 {
   "name": "@repo/storybook-hookform",
   "version": "0.0.0",
-  "main": "./dist/register.js",
   "exports": {
     ".": "./dist/register.js",
     "./preview": "./dist/preview.js",
     "./package.json": "./package.json"
   },
+  "main": "./dist/register.js",
   "scripts": {
-    "prebuild": "npm run clean",
     "build": "tsc",
     "check-types": "tsc --noEmit",
-    "clean": "rm -rf dist",
     "lint": "eslint ."
   },
   "dependencies": {
