@@ -1,0 +1,29 @@
+name: validate
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: build
+        uses: ./.github/actions/build
+
+      - name: prettier
+        run: npx prettier --check .
+
+      - name: lint
+        shell: bash
+        run: npm run lint
+
+      - name: check types
+        shell: bash
+        run: npm run check-types
