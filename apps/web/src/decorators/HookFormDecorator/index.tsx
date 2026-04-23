@@ -39,11 +39,14 @@ export default function HookFormDecorator<TFieldValues extends FieldValues>(
         <FormEmitter />
 
         <Card component="form" onSubmit={onSubmit}>
-          <Box p={2}>
+          <Box sx={{ padding: 2 }}>
             <Story />
           </Box>
 
-          <Stack direction="row" p={2} spacing={2} bgcolor="grey.100">
+          <Stack
+            direction="row"
+            sx={{ padding: 2, gap: 2, bgcolor: "grey.100" }}
+          >
             <Button
               type="submit"
               variant="contained"
