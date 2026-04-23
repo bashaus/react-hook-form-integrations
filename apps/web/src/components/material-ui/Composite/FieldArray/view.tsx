@@ -36,7 +36,7 @@ export default function MuiCompositeFieldArrayView() {
       name="muiCompositeFieldArray"
       render={({ field, fieldState }) => (
         <FormControl error={fieldState.invalid} fullWidth>
-          <Stack spacing={2}>
+          <Stack sx={{ gap: 2 }}>
             <Box>
               <Button
                 variant="text"
