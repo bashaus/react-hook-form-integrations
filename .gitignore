@@ -22,7 +22,6 @@ coverage
 .vercel
 
 # Build Outputs
-build
 dist
 
 

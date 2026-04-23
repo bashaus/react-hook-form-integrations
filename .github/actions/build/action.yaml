@@ -1,0 +1,18 @@
+name: build
+description: build
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v6
+      with:
+        node-version-file: .nvmrc
+        cache: npm
+
+    - name: npm ci
+      shell: bash
+      run: npm ci
+
+    - name: build
+      shell: bash
+      run: npm run build
