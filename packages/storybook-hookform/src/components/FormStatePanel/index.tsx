@@ -4,7 +4,7 @@ import { AddonPanel, EmptyTabContent } from "storybook/internal/components";
 import { addons } from "storybook/manager-api";
 
 import { EVENT_FORM_STATE_UPDATE } from "../../constants";
-import ViewJson from "../ViewJson";
+import ObjectInspector from "../ObjectInspector";
 
 export type FormStatePanelProps = Readonly<{
   active?: boolean;
@@ -27,9 +27,9 @@ export default function FormStatePanel({
 
   return (
     <AddonPanel active={active}>
-      <div style={{ padding: 16 }}>
+      <div style={{ padding: "10px 5px 20px 15px" }}>
         {formState ? (
-          <ViewJson name="formState" src={formState} />
+          <ObjectInspector name="formState" data={formState} />
         ) : (
           <EmptyTabContent
             title="Waiting for form state."

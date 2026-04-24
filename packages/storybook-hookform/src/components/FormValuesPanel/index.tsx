@@ -3,7 +3,7 @@ import { AddonPanel, EmptyTabContent } from "storybook/internal/components";
 import { addons } from "storybook/manager-api";
 
 import { EVENT_FORM_VALUES_UPDATE } from "../../constants";
-import ViewJson from "../ViewJson";
+import ObjectInspector from "../ObjectInspector";
 
 export type FormValuesPanelProps = Readonly<{
   active?: boolean;
@@ -23,9 +23,9 @@ export default function FormValuesPanel({
 
   return (
     <AddonPanel active={active}>
-      <div style={{ padding: 16 }}>
+      <div style={{ padding: "10px 5px 20px 15px" }}>
         {values ? (
-          <ViewJson name="values" src={values} />
+          <ObjectInspector name="formValues" data={values} />
         ) : (
           <EmptyTabContent
             title="No values received."
